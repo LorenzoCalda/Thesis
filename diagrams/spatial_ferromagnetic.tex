@@ -1,0 +1,74 @@
+\begin{tikzpicture}[
+    circ/.style={circle, draw=black, fill=white, minimum size=1cm, thick},
+    group_ellipse/.style={ellipse, draw=black, fill=gray!90, fill opacity=0.1, inner sep=-2mm, thick},
+    line_style/.style={draw=red, thick},
+    loop_style/.style={draw=blue!50!cyan!80!black, thick, looseness=1.5}
+]
+
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set layer order
+
+% Left set of nodes
+\node[circ] (l1) at (0,1.5) {};
+\node[circ, below=0.15cm of l1] (l2) {};
+\node[circ, below=0.15cm of l2] (l3) {};
+\node[circ, below=0.15cm of l3] (l4) {};
+
+% Center set of nodes
+% \node[circ] (c1) at (6,1.5) {};
+% \node[circ, below=0.15cm of c1] (c2) {};
+% \node[circ, below=0.15cm of c2] (c3) {};
+% \node[circ, below=0.15cm of c3] (c4) {};
+
+% Right set of nodes
+\node[circ] (r1) at (6,1.5) {};
+\node[circ, below=0.15cm of r1] (r2) {};
+\node[circ, below=0.15cm of r2] (r3) {};
+\node[circ, below=0.15cm of r3] (r4) {};
+
+% Draw ellipses around the nodes
+\begin{pgfonlayer}{bg}
+    \node[group_ellipse, fit=(l1) (l2) (l3) (l4), minimum width=3cm, minimum height=5cm] (ellipse_l) {};
+    \node[group_ellipse, fit=(r1) (r2) (r3) (r4), minimum width=3cm, minimum height=5cm] (ellipse_r) {};
+    % \node[group_ellipse, fit=(c1) (c2) (c3) (c4), minimum width=3cm, minimum height=5cm] (ellipse_c) {};
+\end{pgfonlayer}
+
+% Draw connecting loop lines between nodes with a slight bend
+% \draw[line_style] (l1) to[bend left=10] (c1);
+% \draw[line_style] (l2) to[bend left=10] (c2);
+% \draw[line_style] (l3) to[bend left=10] (c3);
+% \draw[line_style] (l4) to[bend left=10] (c4);
+% \draw[line_style] (c1) to[bend left=10] (r1);
+% \draw[line_style] (c2) to[bend left=10] (r2);
+% \draw[line_style] (c3) to[bend left=10] (r3);
+% \draw[line_style] (c4) to[bend left=10] (r4);
+\draw[line_style] (l1) to[bend left=10] (r1);
+\draw[line_style] (l2) to[bend left=10] (r2);
+\draw[line_style] (l3) to[bend left=10] (r3);
+\draw[line_style] (l4) to[bend left=10] (r4);
+
+% Draw curved "loop" lines within left group
+\draw[loop_style] (l1.west) to[bend right=30] (l2.west);
+\draw[loop_style] (l2.east) to[bend left=30] (l3.east);
+\draw[loop_style] (l3.west) to[bend right=30] (l4.west);
+\draw[loop_style] (l1.east) to[bend left=50] (l3.east);
+\draw[loop_style] (l2.east) to[bend left=50] (l4.east);
+\draw[loop_style] (l1.west) to[bend right=30] (l4.west);
+
+% Draw curved "loop" lines within center group
+% \draw[loop_style] (c1.west) to[bend right=45] (c2.west);
+% \draw[loop_style] (c2.east) to[bend left=45] (c3.east);
+% \draw[loop_style] (c3.west) to[bend right=45] (c4.west);
+% \draw[loop_style] (c1.east) to[bend left=45] (c3.east);
+% \draw[loop_style] (c2.east) to[bend left=45] (c4.east);
+% \draw[loop_style] (c1.west) to[bend right=30] (c4.west);
+
+% Draw curved "loop" lines within right group
+\draw[loop_style] (r1.east) to[bend left=30] (r2.east);
+\draw[loop_style] (r2.west) to[bend right=30] (r3.west);
+\draw[loop_style] (r3.east) to[bend left=30] (r4.east);
+\draw[loop_style] (r1.west) to[bend right=50] (r3.west);
+\draw[loop_style] (r2.west) to[bend right=50] (r4.west);
+\draw[loop_style] (r1.east) to[bend left=30] (r4.east);
+
+\end{tikzpicture}

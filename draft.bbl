@@ -1,0 +1,187 @@
+\begin{thebibliography}{10}
+
+\bibitem{Amit1989}
+Daniel~J. Amit.
+\newblock {\em Modeling Brain Function: The World of Attractor Neural Networks}.
+\newblock Cambridge University Press, September 1989.
+
+\bibitem{PhysRevA.32.1007}
+Daniel~J. Amit, Hanoch Gutfreund, and H.~Sompolinsky.
+\newblock Spin-glass models of neural networks.
+\newblock {\em Phys. Rev. A}, 32:1007--1018, Aug 1985.
+
+\bibitem{PhysRevLett.55.1530}
+Daniel~J. Amit, Hanoch Gutfreund, and H.~Sompolinsky.
+\newblock Storing infinite numbers of patterns in a spin-glass model of neural networks.
+\newblock {\em Phys. Rev. Lett.}, 55:1530--1533, Sep 1985.
+
+\bibitem{PhysRevA.35.2293}
+Daniel~J. Amit, Hanoch Gutfreund, and H.~Sompolinsky.
+\newblock Information storage in neural networks with low levels of activity.
+\newblock {\em Phys. Rev. A}, 35:2293--2303, Mar 1987.
+
+\bibitem{doi:10.1097/00004647-200110000-00001}
+David Attwell and Simon~B. Laughlin.
+\newblock An energy budget for signaling in the grey matter of the brain.
+\newblock {\em Journal of Cerebral Blood Flow \& Metabolism}, 21(10):1133--1145, 2001.
+\newblock PMID: 11598490.
+
+\bibitem{Baldi2021}
+Pierre Baldi.
+\newblock {\em Deep Learning in Science}.
+\newblock Cambridge University Press, April 2021.
+
+\bibitem{Chengxiang2000}
+Zhang Chengxiang, Chandan Dasgupta, and Manoranjan~P. Singh.
+\newblock Retrieval properties of a hopfield model with random asymmetric interactions.
+\newblock {\em Neural Computation}, 12(4):865--880, April 2000.
+
+\bibitem{Cover1965}
+Thomas~M. Cover.
+\newblock Geometrical and statistical properties of systems of linear inequalities with applications in pattern recognition.
+\newblock {\em IEEE Transactions on Electronic Computers}, EC-14(3):326--334, 1965.
+
+\bibitem{Crisanti1987}
+A.~Crisanti and H.~Sompolinsky.
+\newblock Dynamics of spin systems with randomly asymmetric bonds: Langevin dynamics and a spherical model.
+\newblock {\em Physical Review A}, 36(10):4922--4939, November 1987.
+
+\bibitem{Derrida1987}
+B~Derrida, E~Gardner, and A~Zippelius.
+\newblock An exactly solvable asymmetric neural network model.
+\newblock {\em Europhysics Letters (EPL)}, 4(2):167--173, July 1987.
+
+\bibitem{Forsythe2013}
+Ian~D. Forsythe, Chunlai Wu, and J.~Gerard~G. Borst.
+\newblock Size matters: formation and function of giant synapses.
+\newblock {\em The Journal of Physiology}, 591(13):3123–3123, July 2013.
+
+\bibitem{10.1371/journal.pone.0017514}
+Suzana Herculano-Houzel.
+\newblock Scaling of brain metabolism with a fixed energy budget per neuron: Implications for neuronal activity, plasticity and evolution.
+\newblock {\em PLOS ONE}, 6(3):1--9, 03 2011.
+
+\bibitem{Hertz1986}
+J.~A. Hertz, G.~Grinstein, and S.~A. Solla.
+\newblock Memory networks with asymmetric bonds.
+\newblock In {\em AIP Conference Proceedings}, volume 151, pages 212--218. AIP, 1986.
+
+\bibitem{Hertz2018}
+John Hertz, Anders Krogh, and Richard~G. Palmer.
+\newblock {\em Introduction to the Theory of Neural Computation}.
+\newblock CRC Press, March 1991.
+
+\bibitem{Hinton1983}
+G.~E. Hinton and T.~Sejnowski.
+\newblock Optimal perceptual inference.
+\newblock pages 448--453, Washington, DC, June 1983. ieeecs.
+
+\bibitem{hoffmann2022trainingcomputeoptimallargelanguage}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de~Las~Casas, Lisa~Anne Hendricks, Johannes Welbl, Aidan Clark, Tom Hennigan, Eric Noland, Katie Millican, George van~den Driessche, Bogdan Damoc, Aurelia Guy, Simon Osindero, Karen Simonyan, Erich Elsen, Jack~W. Rae, Oriol Vinyals, and Laurent Sifre.
+\newblock Training compute-optimal large language models, 2022.
+
+\bibitem{Hopfield1982}
+J.J. Hopfield.
+\newblock Neural networks and physical systems with emergent collective computational abilities.
+\newblock {\em Proceedings of the National Academy of Sciences}, 79(8):2554--2558, April 1982.
+
+\bibitem{Hopfield1984}
+J.J. Hopfield.
+\newblock Neurons with graded response have collective computational properties like those of two-state neurons.
+\newblock {\em Proceedings of the National Academy of Sciences of the United States of America}, 81(10):3088--3092, 1984.
+
+\bibitem{Jaeger2001}
+Herbert Jaeger.
+\newblock The" echo state" approach to analysing and training recurrent neural networks-with an erratum note'.
+\newblock {\em Bonn, Germany: German National Research Center for Information Technology GMD Technical Report}, 148, 01 2001.
+
+\bibitem{kaplan2020scalinglawsneurallanguage}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models, 2020.
+
+\bibitem{LITTLE1974101}
+W.A. Little.
+\newblock The existence of persistent states in the brain.
+\newblock {\em Mathematical Biosciences}, 19(1):101--120, 1974.
+
+\bibitem{Maass2011}
+Wolfgang Maass.
+\newblock {\em Liquid State Machines: Motivation, Theory, and Applications}, pages 275--296.
+\newblock 2011.
+
+\bibitem{Maass2004}
+Wolfgang Maass and Henry Markram.
+\newblock On the computational power of circuits of spiking neurons.
+\newblock {\em Journal of Computer and System Sciences}, 69(4):593--616, 2004.
+
+\bibitem{Maass2002}
+Wolfgang Maass, Thomas Natschl\"{a}ger, and Henry Markram.
+\newblock Real-time computing without stable states: A new framework for neural computation based on perturbations.
+\newblock {\em Neural Computation}, 14(11):25312560, November 2002.
+
+\bibitem{McCulloch1943}
+Warren~S. McCulloch and Walter Pitts.
+\newblock A logical calculus of the ideas immanent in nervous activity.
+\newblock {\em The Bulletin of Mathematical Biophysics}, 5(4):115--133, December 1943.
+
+\bibitem{Melandri2014}
+Luca Melandri.
+\newblock Introduction to reservoir computing methods.
+\newblock Master's thesis, Alma Mater Studiorum - Università di Bologna, 2014.
+
+\bibitem{Parisi_1986}
+G~Parisi.
+\newblock Asymmetric neural networks and the process of learning.
+\newblock {\em Journal of Physics A: Mathematical and General}, 19(11):L675, aug 1986.
+
+\bibitem{Peretto1984}
+P.~Peretto.
+\newblock Collective properties of neural networks: A statistical physics approach.
+\newblock {\em Biological Cybernetics}, 50(1):51--62, February 1984.
+
+\bibitem{Rosenblatt1958}
+F.~Rosenblatt.
+\newblock The perceptron: A probabilistic model for information storage and organization in the brain.
+\newblock {\em Psychological Review}, 65(6):386--408, 1958.
+
+\bibitem{Saglietti2018}
+Luca Saglietti, Federica Gerace, Alessandro Ingrosso, Carlo Baldassi, and Riccardo Zecchina.
+\newblock From statistical inference to a differential learning rule for stochastic neural networks.
+\newblock {\em Interface Focus}, 8(6):20180033, October 2018.
+
+\bibitem{Scardecchia2023}
+Mattia Scardecchia.
+\newblock Statistical physics of learning.
+\newblock Bachelor's thesis based on unpublished work of {R}. {Zecchina}, {M}. {Mezard}, {C}. {Baldassi}, Bocconi University, 2023.
+
+\bibitem{Scholl2020}
+Benjamin Scholl, Connon~I. Thomas, Melissa~A. Ryan, Naomi Kamasawa, and David Fitzpatrick.
+\newblock Cortical response selectivity derives from strength in numbers of synapses.
+\newblock {\em Nature}, 590(7844):111--114, December 2020.
+
+\bibitem{Sompolinsky1988}
+H.~Sompolinsky, A.~Crisanti, and H.~J. Sommers.
+\newblock Chaos in random neural networks.
+\newblock {\em Physical Review Letters}, 61(3):259--262, July 1988.
+
+\bibitem{TANAKA2019100}
+Gouhei Tanaka, Toshiyuki Yamane, Jean~Benoit Héroux, Ryosho Nakane, Naoki Kanazawa, Seiji Takeda, Hidetoshi Numata, Daiju Nakano, and Akira Hirose.
+\newblock Recent advances in physical reservoir computing: A review.
+\newblock {\em Neural Networks}, 115:100--123, 2019.
+
+\bibitem{Student2024}
+Unkown.
+\newblock Unknown.
+\newblock Bachelor's thesis based on unpublished work of {R}. {Zecchina}, {M}. {Mezard}, {C}. {Baldassi}, Bocconi University, 2024.
+
+\bibitem{Xu2024}
+Zhenghua Xu, Miao Yu, and Yuhang Song.
+\newblock Inspires effective alternatives to backpropagation: predictive coding helps understand and build learning.
+\newblock {\em Neural Regeneration Research}, 20(11):3215--3216, October 2024.
+
+\bibitem{Xu1996}
+Zong-Ben Xu, Guo-Qing Hu, and Chung-Ping Kwong.
+\newblock Asymmetric hopfield-type networks: Theory and applications.
+\newblock {\em Neural Networks}, 9(3):483--501, April 1996.
+
+\end{thebibliography}

@@ -1,0 +1,41 @@
+\contentsline {part}{Introduction}{3}{chapter*.2}%
+\contentsline {part}{Part I: Foundations of Biological Learning Models}{6}{part*.3}%
+\contentsline {chapter}{\numberline {1}Neuron Models and Classical Learning Rules}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Artificial Neuron Model}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Classical Learning Rules}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}The Hopfield Network}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Framework}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Attractor states}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Capacity considerationss}{14}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Random Recurrent Neural Networks}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Stabilization through Self-couplings}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Stabilization through Sparse Positive Reinforcement}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Experimental Setup}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Results}{22}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Reservoir Computing}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Liquid State Machines}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Echo State Networks}{26}{section.4.2}%
+\contentsline {part}{Part II: Multi-Layer Chain Models}{29}{part*.23}%
+\contentsline {chapter}{\numberline {5}Introduction and Motivation}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Background}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Overview of Multi-Layer Chain Architecture}{31}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Mathematical Formulation}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Model Framework}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Learning Dynamics}{33}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Convergence Step}{34}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Update Step}{35}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}Empirical Evaluation}{36}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Baseline Implementation with MNIST dataset}{36}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{36}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Results}{36}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Going Beyond the Perceptron}{36}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Experimental Setup}{36}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Results}{36}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Enforcing Sparsity in MLCMs}{36}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Experimental Setup}{36}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Results}{36}{subsection.7.3.2}%
+\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{37}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Summary of Contributions}{37}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{37}{section.8.2}%
+\contentsline {chapter}{References}{37}{section.8.2}%
+\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{42}{appendix.A}%
