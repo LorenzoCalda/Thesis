@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  4 JUN 2025 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  4 JUN 2025 17:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -686,7 +686,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 83--93
+Underfull \hbox (badness 10000) in paragraph at lines 83--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--139
 
  []
 
@@ -695,11 +705,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--93
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 117--128
-
- []
-
-
 
 [4]
 
@@ -726,14 +731,19 @@ Chapter 2.
 ]
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 363--367
+Underfull \hbox (badness 10000) in paragraph at lines 335--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--377
 
  []
 
 
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 411--415
+Underfull \hbox (badness 10000) in paragraph at lines 409--418
 
  []
 
@@ -746,7 +756,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--415
 [15]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--504
+Underfull \hbox (badness 10000) in paragraph at lines 496--502
 
  []
 
@@ -755,61 +765,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--504
 [16
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 530--546
+Underfull \hbox (badness 10000) in paragraph at lines 528--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--548
 
  []
 
 
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 554--563
+Underfull \hbox (badness 10000) in paragraph at lines 552--561
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--563
+Underfull \hbox (badness 10000) in paragraph at lines 552--561
 
  []
 
 
 
 [18]
-<Critical_JD_vs_Neurons.jpg, id=402, 765.86125pt x 458.71375pt>
+<Critical_JD_vs_Neurons.jpg, id=412, 765.86125pt x 458.71375pt>
 File: Critical_JD_vs_Neurons.jpg Graphic file (type jpg)
 <use Critical_JD_vs_Neurons.jpg>
-Package pdftex.def Info: Critical_JD_vs_Neurons.jpg  used on input line 598.
+Package pdftex.def Info: Critical_JD_vs_Neurons.jpg  used on input line 596.
 (pdftex.def)             Requested size: 364.19667pt x 218.13628pt.
-<Average_conv_time.jpg, id=404, 862.22125pt x 547.04375pt>
+<Average_conv_time.jpg, id=414, 862.22125pt x 547.04375pt>
 File: Average_conv_time.jpg Graphic file (type jpg)
 <use Average_conv_time.jpg>
-Package pdftex.def Info: Average_conv_time.jpg  used on input line 622.
+Package pdftex.def Info: Average_conv_time.jpg  used on input line 620.
 (pdftex.def)             Requested size: 364.19667pt x 231.0673pt.
 
 
 [19 <./Critical_JD_vs_Neurons.jpg>]
 
 [20 <./Average_conv_time.jpg>]
-<100_N_avg_it.jpg, id=422, 679.53876pt x 565.11125pt>
+<100_N_avg_it.jpg, id=432, 679.53876pt x 565.11125pt>
 File: 100_N_avg_it.jpg Graphic file (type jpg)
 <use 100_N_avg_it.jpg>
-Package pdftex.def Info: 100_N_avg_it.jpg  used on input line 694.
+Package pdftex.def Info: 100_N_avg_it.jpg  used on input line 692.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
-<1000_N_avg_it.jpg, id=423, 679.53876pt x 565.11125pt>
+<1000_N_avg_it.jpg, id=433, 679.53876pt x 565.11125pt>
 File: 1000_N_avg_it.jpg Graphic file (type jpg)
 <use 1000_N_avg_it.jpg>
-Package pdftex.def Info: 1000_N_avg_it.jpg  used on input line 695.
+Package pdftex.def Info: 1000_N_avg_it.jpg  used on input line 693.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
-<10000_N_avg_it.jpg, id=424, 679.53876pt x 565.11125pt>
+<10000_N_avg_it.jpg, id=434, 679.53876pt x 565.11125pt>
 File: 10000_N_avg_it.jpg Graphic file (type jpg)
 <use 10000_N_avg_it.jpg>
-Package pdftex.def Info: 10000_N_avg_it.jpg  used on input line 696.
+Package pdftex.def Info: 10000_N_avg_it.jpg  used on input line 694.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
 
 
 [21]
 
 [22 <./100_N_avg_it.jpg> <./1000_N_avg_it.jpg> <./10000_N_avg_it.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 748--755
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
@@ -817,16 +832,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 748--755
 
 [23]
 Chapter 4.
-<RC_picture.png, id=448, 687.56876pt x 521.95pt>
+<RC_picture.png, id=459, 687.56876pt x 521.95pt>
 File: RC_picture.png Graphic file (type png)
 <use RC_picture.png>
-Package pdftex.def Info: RC_picture.png  used on input line 789.
+Package pdftex.def Info: RC_picture.png  used on input line 787.
 (pdftex.def)             Requested size: 364.19667pt x 276.46492pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 797--803
+Underfull \hbox (badness 10000) in paragraph at lines 795--808
 
  []
 
@@ -837,7 +852,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 797--803
 ]
 
 [25 <./RC_picture.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 842--848
+Underfull \hbox (badness 10000) in paragraph at lines 840--852
 
  []
 
@@ -852,12 +867,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 842--848
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 899--903
+Underfull \hbox (badness 10000) in paragraph at lines 897--911
 
  []
-
-
-Overfull \vbox (2.97273pt too high) has occurred while \output is active []
 
 
 
@@ -869,7 +881,7 @@ Overfull \vbox (2.97273pt too high) has occurred while \output is active []
 )
 
 [30] (./diagrams/MLCM.tex)
-Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--962
+Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--960
  [][] 
  []
 
@@ -878,7 +890,7 @@ Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--962
 [31]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 969--974
+Underfull \hbox (badness 10000) in paragraph at lines 967--974
 
  []
 
@@ -887,25 +899,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 969--974
 [32
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1044
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1044
 
  []
 
 
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1062
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1088
 
  []
 
 
 
 [34]
+Underfull \hbox (badness 10000) in paragraph at lines 1109--1122
+
+ []
+
+
 
 [35]
 Chapter 7.
@@ -914,58 +926,53 @@ Chapter 7.
 [36
 
 ]
+
+[37]
 Chapter 8.
 (./draft.bbl
-
-[37
-
-]
 
 [38
 
 ]
 
-[39]
-
-[40])
-
-[41]
-Appendix A.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1156.
-
-
-[42
+[39
 
 ]
 
-[43] (./draft.aux)
+[40]
+
+[41])
+
+[42]
+Appendix A.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1184.
+
+
+[43
+
+]
+
+[44] (./draft.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `draft.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `draft.out':
-(rerunfilecheck)             Before: 3E40FC3A89CE370E2F320CAA7345306B;6860
-(rerunfilecheck)             After:  C9F421CD13B6773E1F21379AB98F3CB3;7112.
+Package rerunfilecheck Info: File `draft.out' has not changed.
+(rerunfilecheck)             Checksum: C9F421CD13B6773E1F21379AB98F3CB3;7112.
  ) 
 Here is how much of TeX's memory you used:
- 24686 strings out of 473201
- 458088 string characters out of 5720299
- 852421 words of memory out of 5000000
- 47351 multiletter control sequences out of 15000+600000
+ 24689 strings out of 473201
+ 458131 string characters out of 5720299
+ 852424 words of memory out of 5000000
+ 47353 multiletter control sequences out of 15000+600000
  571809 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,87p,600b,881s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on draft.pdf (47 pages, 1259929 bytes).
+Output written on draft.pdf (48 pages, 1262111 bytes).
 PDF statistics:
- 724 PDF objects out of 1000 (max. 8388607)
- 618 compressed objects within 7 object streams
- 181 named destinations out of 1000 (max. 500000)
- 355 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 629 compressed objects within 7 object streams
+ 182 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 

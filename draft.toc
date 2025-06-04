@@ -25,17 +25,17 @@
 \contentsline {subsection}{\numberline {6.2.1}Convergence Step}{34}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Update Step}{35}{subsection.6.2.2}%
 \contentsline {chapter}{\numberline {7}Empirical Evaluation}{36}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Baseline Implementation with MNIST dataset}{36}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{36}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Results}{36}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Going Beyond the Perceptron}{36}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Experimental Setup}{36}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Results}{36}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Enforcing Sparsity in MLCMs}{36}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Experimental Setup}{36}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Results}{36}{subsection.7.3.2}%
-\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{37}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Summary of Contributions}{37}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{37}{section.8.2}%
-\contentsline {chapter}{References}{37}{section.8.2}%
-\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{42}{appendix.A}%
+\contentsline {section}{\numberline {7.1}Baseline Implementation with MNIST dataset}{37}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{37}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Results}{37}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Going Beyond the Perceptron}{37}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Experimental Setup}{37}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Results}{37}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Enforcing Sparsity in MLCMs}{37}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Experimental Setup}{37}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Results}{37}{subsection.7.3.2}%
+\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{38}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Summary of Contributions}{38}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{38}{section.8.2}%
+\contentsline {chapter}{References}{38}{section.8.2}%
+\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{43}{appendix.A}%
