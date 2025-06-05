@@ -46,6 +46,11 @@ A.~Crisanti and H.~Sompolinsky.
 \newblock Dynamics of spin systems with randomly asymmetric bonds: Langevin dynamics and a spherical model.
 \newblock {\em Physical Review A}, 36(10):4922--4939, November 1987.
 
+\bibitem{Student2024}
+Martina Del~Gaudio.
+\newblock Unknown.
+\newblock Bachelor's thesis based on unpublished work of {R}. {Zecchina}, {M}. {Mezard}, {C}. {Baldassi}, Bocconi University, 2024.
+
 \bibitem{Derrida1987}
 B~Derrida, E~Gardner, and A~Zippelius.
 \newblock An exactly solvable asymmetric neural network model.
@@ -69,7 +74,7 @@ J.~A. Hertz, G.~Grinstein, and S.~A. Solla.
 \bibitem{Hertz2018}
 John Hertz, Anders Krogh, and Richard~G. Palmer.
 \newblock {\em Introduction to the Theory of Neural Computation}.
-\newblock CRC Press, March 1991.
+\newblock CRC Press, March 2018.
 
 \bibitem{Hinton1983}
 G.~E. Hinton and T.~Sejnowski.
@@ -94,6 +99,11 @@ J.J. Hopfield.
 Herbert Jaeger.
 \newblock The" echo state" approach to analysing and training recurrent neural networks-with an erratum note'.
 \newblock {\em Bonn, Germany: German National Research Center for Information Technology GMD Technical Report}, 148, 01 2001.
+
+\bibitem{JAASKELAINEN2022119633}
+Iiro~P. Jääskeläinen, Enrico Glerean, Vasily Klucharev, Anna Shestakova, and Jyrki Ahveninen.
+\newblock Do sparse brain activity patterns underlie human cognition?
+\newblock {\em NeuroImage}, 263:119633, 2022.
 
 \bibitem{kaplan2020scalinglawsneurallanguage}
 Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
@@ -144,11 +154,6 @@ F.~Rosenblatt.
 \newblock The perceptron: A probabilistic model for information storage and organization in the brain.
 \newblock {\em Psychological Review}, 65(6):386--408, 1958.
 
-\bibitem{Saglietti2018}
-Luca Saglietti, Federica Gerace, Alessandro Ingrosso, Carlo Baldassi, and Riccardo Zecchina.
-\newblock From statistical inference to a differential learning rule for stochastic neural networks.
-\newblock {\em Interface Focus}, 8(6):20180033, October 2018.
-
 \bibitem{Scardecchia2023}
 Mattia Scardecchia.
 \newblock Statistical physics of learning.
@@ -168,11 +173,6 @@ H.~Sompolinsky, A.~Crisanti, and H.~J. Sommers.
 Gouhei Tanaka, Toshiyuki Yamane, Jean~Benoit Héroux, Ryosho Nakane, Naoki Kanazawa, Seiji Takeda, Hidetoshi Numata, Daiju Nakano, and Akira Hirose.
 \newblock Recent advances in physical reservoir computing: A review.
 \newblock {\em Neural Networks}, 115:100--123, 2019.
-
-\bibitem{Student2024}
-Unkown.
-\newblock Unknown.
-\newblock Bachelor's thesis based on unpublished work of {R}. {Zecchina}, {M}. {Mezard}, {C}. {Baldassi}, Bocconi University, 2024.
 
 \bibitem{Xu2024}
 Zhenghua Xu, Miao Yu, and Yuhang Song.

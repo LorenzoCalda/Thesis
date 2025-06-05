@@ -1136,12 +1136,14 @@ Given that MLCMs are a novel approach whose behavior is not yet fully
 characterized, our primary goal is not to achieve state-of-the-art performance, 
 but rather to conduct a series of exploratory experiments that test the basic 
 feasibility and potential of the architecture. \\
-\textcolor{red}{To this end, we describe three main experimental protocols. The first evaluates the 
-performance of baseline MLCMs on MNIST. The second compares MLCMs to simple 
+\textcolor{red}{To this end, we outline three main experimental protocols. The first 
+assesses baseline MLCM performance on two key datasets—MNIST and Fashion MNIST—as 
+well as two more challenging variants. It also compares these results to simple 
 perceptron classifiers trained on the same data, highlighting any practical 
-advantages or shortcomings. The third experiment investigates modifications to the 
-original MLCM design, including the use of binary \(\{0,1\}\) states to enforce 
-neural sparsity, and assesses their impact on empirical behavior. \\}
+advantages or drawbacks. The third experiment 
+investigates modifications to the original MLCM design, including the use of binary 
+\(\{0,1\}\) states to enforce neural sparsity, and assesses their impact on empirical 
+behavior. \\}
 We will be focusing specifically on classification tasks with binary inputs, as they 
 lend themselves best to the current MLCM formulation. However, this constraint can 
 easily be relaxed in future work by making minor modifications to the architecture. \\
@@ -1248,10 +1250,64 @@ architecture is capable of learning meaningful internal representations of the d
 \subsection{Experimental Setup}
 \subsection{Results}
 
-\section{Enforcing Sparsity in MLCMs}
+\section{Sparsity Enforcement in MLCMs}
+The reliance on $\{-1, 1\}$ states in the standard formulations of perceptrons and MLCMs
+is not biologically realistic, as biological neurons are typically either silent or 
+active. A better framework to model biological neurons is to use binary states which 
+take values in $\{0, 1\}$, where $0$ represents a silent neuron and $1$ an active one.\\
+With this change, the dynamics of the MLCM described in equation
+\ref{eq:si_update} are expressed as:
+\begin{equation}
+    s_i^l(t+1) = 
+    \begin{cases}
+        \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
+        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_R^l\, s_i^{l+1}(t) - \gamma
+        \right) & \text{if } l = 1 \\[2ex]
+        \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
+        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_R^l\, s_i^{l+1}(t)  - \gamma
+        \right) & \text{if } 1 < l < L \\[2ex]
+        \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
+        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
+        \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k  - \gamma\right) & \text{if } l = L
+    \end{cases}
+    \label{eq:si_sparse_update}
+\end{equation}
+Where $\boldsymbol{\theta}$ is the heaviside function and $\gamma$ is a threshold function that 
+regulates the activation of the states. \\
+This change is not only attractive for the above reason, but also because through the 
+inclusion of an inactive state we can work to enforce sparsity on the network. Human 
+brains are known to be highly activation sparse, with only a small fraction of neurons 
+firing at any given time. This sparsity is thought to be crucial for efficient 
+information processing and sparse representations have been hypothesized to be key in 
+encoding high-level features and concepts in the brain \cite{JAASKELAINEN2022119633}.\\
+Sparsity also has practical benefits in terms of computational efficiency, as it 
+reduces the number of non-trivial computations required to run the dynamics.
+\vspace*{0.5em}
 
-\subsection{Experimental Setup}
-\subsection{Results}
+In mathematical terms, we say that layer $l$ is has a sparsity of $\delta^l$ at time 
+$t$ if: 
+$$\frac{1}{N} \sum_{i=0}^{N} s_i^l(t) = \delta^l$$
+Through the modification of the threshold function $\gamma$ we can regulate the 
+sparsity of the network. Bigger threshold values will lead to less neurons being activated,
+while smaller threshold values will lead to more neurons being activated.
+\vspace*{0.5em}
+
+In this section, we examine two strategies for setting the threshold $\gamma$ : using 
+a fixed threshold value for all neurons, and employing a Winner-Takes-All (WTA) 
+mechanism, where only the most strongly activated neurons become active.
+
+\subsection{Fixed Threshold Sparsity}
+In this first experiment, we explore the impact of a fixed threshold value on the 
+sparsity of the MLCM. The threshold is set to a constant value $\gamma^l$ across all 
+neurons in a layer $l$.
+
+\subsubsection*{Experimental Setup}
+\subsubsection*{Results}
+
+\subsection{Winner-Takes-All Sparsity}
+
+\subsubsection*{Experimental Setup}
+\subsubsection*{Results}
 
 \chapter{Conclusions and Future Directions}
 \section{Summary of Contributions}

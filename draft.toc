@@ -28,14 +28,14 @@
 \contentsline {section}{\numberline {7.1}Baseline Implementation with Classical datasets}{37}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{37}{subsection.7.1.1}%
 \contentsline {subsection}{\numberline {7.1.2}Results}{38}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Going Beyond the Perceptron}{39}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Experimental Setup}{39}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Results}{39}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Enforcing Sparsity in MLCMs}{39}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Experimental Setup}{39}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Results}{39}{subsection.7.3.2}%
-\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{40}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Summary of Contributions}{40}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{40}{section.8.2}%
-\contentsline {chapter}{References}{40}{section.8.2}%
-\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{45}{appendix.A}%
+\contentsline {section}{\numberline {7.2}Going Beyond the Perceptron}{40}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Experimental Setup}{40}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Results}{40}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Sparsity Enforcement in MLCMs}{40}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Fixed Threshold Sparsity}{41}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Winner-Takes-All Sparsity}{41}{subsection.7.3.2}%
+\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{42}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Summary of Contributions}{42}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{42}{section.8.2}%
+\contentsline {chapter}{References}{42}{section.8.2}%
+\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{47}{appendix.A}%
