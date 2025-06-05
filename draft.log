@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  5 JUN 2025 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  5 JUN 2025 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,22 +855,22 @@ Chapter 7.
 <pictures/mnist_exp1.png, id=561, 1726.5303pt x 427.8384pt>
 File: pictures/mnist_exp1.png Graphic file (type png)
 <use pictures/mnist_exp1.png>
-Package pdftex.def Info: pictures/mnist_exp1.png  used on input line 1205.
+Package pdftex.def Info: pictures/mnist_exp1.png  used on input line 1204.
 (pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
 <pictures/projected_mnist_exp1.png, id=563, 1727.253pt x 427.8384pt>
 File: pictures/projected_mnist_exp1.png Graphic file (type png)
 <use pictures/projected_mnist_exp1.png>
-Package pdftex.def Info: pictures/projected_mnist_exp1.png  used on input line 1210.
+Package pdftex.def Info: pictures/projected_mnist_exp1.png  used on input line 1209.
 (pdftex.def)             Requested size: 455.24411pt x 112.76297pt.
 <pictures/fashion_mnist_exp1.png, id=568, 1726.5303pt x 427.8384pt>
 File: pictures/fashion_mnist_exp1.png Graphic file (type png)
 <use pictures/fashion_mnist_exp1.png>
-Package pdftex.def Info: pictures/fashion_mnist_exp1.png  used on input line 1220.
+Package pdftex.def Info: pictures/fashion_mnist_exp1.png  used on input line 1222.
 (pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
 <pictures/projected_fashion_mnist_exp1.png, id=569, 1726.5303pt x 427.8384pt>
 File: pictures/projected_fashion_mnist_exp1.png Graphic file (type png)
 <use pictures/projected_fashion_mnist_exp1.png>
-Package pdftex.def Info: pictures/projected_fashion_mnist_exp1.png  used on input line 1225.
+Package pdftex.def Info: pictures/projected_fashion_mnist_exp1.png  used on input line 1227.
 (pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
 
 
@@ -898,7 +898,7 @@ Chapter 8.
 
 [44]
 Appendix A.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1267.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1279.
 
 
 [45
@@ -914,18 +914,18 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 3B9CC15766A67789426D87CBE419AD3E;7137.
  ) 
 Here is how much of TeX's memory you used:
- 24847 strings out of 473201
- 462069 string characters out of 5720299
- 854689 words of memory out of 5000000
- 47500 multiletter control sequences out of 15000+600000
+ 24848 strings out of 473201
+ 462093 string characters out of 5720299
+ 855019 words of memory out of 5000000
+ 47501 multiletter control sequences out of 15000+600000
  572109 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,87p,600b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on draft.pdf (50 pages, 1891230 bytes).
+Output written on draft.pdf (50 pages, 1878447 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 649 compressed objects within 7 object streams
+ 772 PDF objects out of 1000 (max. 8388607)
+ 651 compressed objects within 7 object streams
  190 named destinations out of 1000 (max. 500000)
  391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

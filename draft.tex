@@ -1136,12 +1136,12 @@ Given that MLCMs are a novel approach whose behavior is not yet fully
 characterized, our primary goal is not to achieve state-of-the-art performance, 
 but rather to conduct a series of exploratory experiments that test the basic 
 feasibility and potential of the architecture. \\
-To this end, we describe three main experimental protocols. The first evaluates the 
+\textcolor{red}{To this end, we describe three main experimental protocols. The first evaluates the 
 performance of baseline MLCMs on MNIST. The second compares MLCMs to simple 
 perceptron classifiers trained on the same data, highlighting any practical 
 advantages or shortcomings. The third experiment investigates modifications to the 
 original MLCM design, including the use of binary \(\{0,1\}\) states to enforce 
-neural sparsity, and assesses their impact on empirical behavior. \\
+neural sparsity, and assesses their impact on empirical behavior. \\}
 We will be focusing specifically on classification tasks with binary inputs, as they 
 lend themselves best to the current MLCM formulation. However, this constraint can 
 easily be relaxed in future work by making minor modifications to the architecture. \\
@@ -1184,8 +1184,8 @@ hyperparameters are: $\lambda^1_L, \lambda^2_L, \lambda^3_L, \lambda^4_L,
 \subsubsection*{Evaluation}
 Performance is measured by classification accuracy on the held-out MNIST test set. 
 We report the average accuracy over 10 random initializations of the MLCM weights to 
-assess robustness. Training and evaluation are conducted for a fixed number of 
-epochs, it turns out that 20 is enough, and the best accuracy achieved is documented.
+assess robustness. Training and evaluation accuracies are recoded at each epoch 
+for the entire training duration of 20 epochs.
 %
 \subsubsection*{Baseline Comparison}
 To contextualize the results, we compare the accuracy of the MLCM-based classifier 
@@ -1209,9 +1209,11 @@ provides a foundation for more detailed investigations in subsequent experiments
         \includegraphics[width=\linewidth]{pictures/projected_mnist_exp1.png}
         \caption{}\label{fig:emnist_exp1}
     \end{subfigure}
-    \caption{Comparison of testing and validation accuracy per epoch for MLCM and the 
-    Perceptron (Single Layer Network  - SLN) on MNIST (Fig.  
-    \ref{fig:mnist_exp1}) and Projected MNIST (Fig. \ref{fig:emnist_exp1}).}
+    \caption{Comparison of testing and validation accuracy per epoch, reported with 
+    their $95\%$ confidence interval, for MLCM and the Perceptron (Single Layer 
+    Network  - SLN) on MNIST (Fig. \ref{fig:mnist_exp1}) and Projected MNIST 
+    (Fig. \ref{fig:emnist_exp1}).}
+    \label{fig:all_mnist_exp1}
 \end{figure}
 
 \begin{figure}[h!]
@@ -1225,12 +1227,22 @@ provides a foundation for more detailed investigations in subsequent experiments
         \includegraphics[width=\linewidth]{pictures/projected_fashion_mnist_exp1.png}
         \caption{}\label{fig:efashion_mnist_exp1}
     \end{subfigure}
-    \caption{Comparison of testing and validation accuracy per epoch for MLCM and the 
-    Perceptron (Single Layer Network  - SLN) on Fashion MNIST (Fig.  
-    \ref{fig:fashion_mnist_exp1}) and Projected MNIST (Fig. \ref{fig:efashion_mnist_exp1}).}
-    \label{fig:mlcm_vs_perceptron}
+    \caption{Comparison of testing and validation accuracy per epoch, reported with their 
+    $95\%$ confidence interval, for MLCM and the Perceptron (Single Layer Network - 
+    SLN) on Fashion MNIST (Fig. \ref{fig:fashion_mnist_exp1}) and Projected Fashion 
+    MNIST (Fig. \ref{fig:efashion_mnist_exp1}).}
+    \label{fig:all_fashion_mnist_exp1}
 \end{figure}
 
+We report in Fig. \ref{fig:all_mnist_exp1} the results for the MNIST experiments and 
+in Fig. \ref{fig:all_fashion_mnist_exp1} those for Fashion MNIST. Overall, MLCM 
+outperforms the perceptron model, with a notable $5\%$ validation accuracy advantage 
+on projected MNIST, a significant margin for this task. While both models reach 
+similar training accuracy on the simpler base datasets, MLCMs achieve much higher 
+validation accuracy, indicating that their internal representations better highlight 
+important features and reduce overfitting. These initial results suggest that 
+MLCM-based preprocessing positively impacts perceptron performance and that the 
+architecture is capable of learning meaningful internal representations of the data.
 \section{Going Beyond the Perceptron}
 
 \subsection{Experimental Setup}
