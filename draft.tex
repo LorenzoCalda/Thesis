@@ -16,6 +16,8 @@
 \usepackage{tikz}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage{graphicx}
 \usepackage{caption}
 
 \usetikzlibrary{backgrounds, shapes.geometric, positioning, fit, arrows.meta}
@@ -89,8 +91,8 @@ biological analogues to improve learning and memory. While the field of machine 
 made significant advances—with remarkable achievements in object recognition, natural language 
 processing, and strategic game playing—implementing more biologically plausible models may prove 
 instrumental in solving key issues with today's modern AI architectures.
-\\~\\
-%
+\vspace{0.5em}
+
 One significant motivation for such biologically inspired approaches is the stark contrast in energy 
 efficiency between biological and artificial systems. 
 Following the pioneering work of Kaplan et al. \cite{kaplan2020scalinglawsneurallanguage}, which 
@@ -111,8 +113,8 @@ This stands in stark contrast with the brain, whose reported energy consumption 
 $O(N)$ with the number of neurons \cite{10.1371/journal.pone.0017514}; Moreover, under normal 
 conditions a human brain --- composed of roughly $9\times10^{10}$ neurons and $10^{14}$ synapses --- 
 operates only on approximately 20 W. \cite{doi:10.1097/00004647-200110000-00001}
-\\~\\
-%
+\vspace{0.5em}
+
 There are multiple factors underlying this efficiency gap, of which two are particularly noteworthy. \\
 First, biological learning relies on local update rules --- synaptic modifications that depend only 
 on signals available at the level of individual neurons --- whereas backpropagation requires global 
@@ -123,8 +125,8 @@ given moment only a small fraction of neurons and synapses are active, dramatica
 expenditure. These observations suggest that incorporating local learning mechanisms and sparse 
 event-driven processing into artificial models could yield substantial gains in efficiency without 
 sacrificing performance.
-\\~\\
-%
+\vspace{0.5em}
+
 The content of the thesis will be divided into two parts: \\ 
 In Part I, we review the biological foundations of learning and memory, presenting a systematic 
 outline of key models --- in particular associative networks and reservoir computing --- and the 
@@ -337,7 +339,8 @@ In practice this happens because the Hebb rule ensures that the stored patterns 
 only fixed points of the dynamics, but also function as attractors; meaning that 
 initializing the network with a states that is close in hamming distance to one of the
 stored patterns will cause the Hopfield network to converge towards that pattern.
-\\~\\
+\vspace{0.5em}
+
 Although true in the general case (up to certain capacity constraints that we will explore
 later), let's exam the stability claim of a particular stored pattern $\xi^\nu$ in the case of 
 P randomly drawn i.i.d. patterns $\{\xi^{\mu}\}_{\mu=1}^P$ and $N \to \infty$. 
@@ -361,8 +364,8 @@ central limit theorem to get:
 \end{equation}
 We conclude that, in the thermodynamic limit $N \to \infty$, the noise term becomes 
 negligible and thus we verify with probability one that the pattern is indeed a fixed point.
-\\~\\
-%
+\vspace{0.5em}
+
 Physically, the stable configurations of the network dynamics correspond to local minima 
 of the energy function defined in \eqref{eq:energy}.  Geometrically, one may view the 
 energy as a real-valued surface over the \(2^N\) vertices of an \(N\)-dimensional 
@@ -409,8 +412,8 @@ These unwanted minima can trap the dynamics and degrade retrieval performance.
 The second and third type are called \emph{spurious states} and --- even though they 
 usually have small basins of attractions compared to the retrieval states --- they tend 
 to be problematic and degrade retrieval performance.
-\\~\\
-%
+\vspace{0.5em}
+
 To mitigate these effects, researchers have introduced stochasticity into the update rule, 
 effectively turning the network into a finite temperature Ising model.  
 This system can escape shallow local minima and more thoroughly explore the state space, 
@@ -527,7 +530,8 @@ itself. Thus the updated dynamics for this type of network become:
 
 In this case the value of $J_D$ is set to be positive and is taken to be the same for 
 all neurons.
-\\~\\
+\vspace{0.5em}
+
 It's clear to see that the self-coupling term acts as a stabilizing force, as it works
 to oppose changes in the state of the neuron.\\
 However, $J_D \gg 1$ leads to a trivial model as the self-coupling term overpowers 
@@ -540,8 +544,8 @@ The objective then becomes to find reasonable values of $J_D$ that allow for a n
 but stable dynamic. To this end we introduce the concept of \emph{critical self-coupling} 
 $J^*_D$, which we define to be the infimum of the values of $J_D$ such that the network 
 is able to fully converge for any combination of weights and states.
-\\~\\
-%
+\vspace{0.5em}
+
 Earlier works have taken both theoretical approaches \cite{Scardecchia2023}, showing through stastical 
 physics methods that the logarithm of the (normalized) number of fixed points of the 
 network as a function of $J_D$ has form:
@@ -557,7 +561,7 @@ Our contribution to this line of work has been to massively scale up the numeric
 experiments by developing a highly optimized C implementation of the model, allowing us
 to expand from networks of 8,000 neurons in prior studies to over 100,000 neurons and 
 enabling robust measurement of \(J_D^*\) across large variations in system size.
-\\~\\
+\vspace{0.5em}
 
 We present two main results: the first is the behaviour of the critical self-coupling
 as a function of the network size, and the second is the convergence time
@@ -593,7 +597,7 @@ networks.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{Critical_JD_vs_Neurons.jpg}
+  \includegraphics[width=0.8\textwidth]{pictures/Critical_JD_vs_Neurons.jpg}
   \caption{Behavior of the critical self-coupling $J^*_D$ as a function of the 
   network size $N$}
   \label{fig:critical_JD_vs_Neurons}
@@ -617,7 +621,7 @@ further work is needed to establish a more precise relationship.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{Average_conv_time.jpg}
+  \includegraphics[width=0.8\textwidth]{pictures/Average_conv_time.jpg}
   \caption{Convergence times as a function of the self-coupling $J_D$}
   \label{fig:average_convergence_time_vs_JD}
 \end{figure}
@@ -689,9 +693,9 @@ The position of the non-zero entries is chosen from a uniform distribution over 
 \subsection{Results}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.4\textwidth]{100_N_avg_it.jpg}
-  \includegraphics[width=0.4\textwidth]{1000_N_avg_it.jpg}
-  \includegraphics[width=0.4\textwidth]{10000_N_avg_it.jpg}
+  \includegraphics[width=0.4\textwidth]{pictures/100_N_avg_it.jpg}
+  \includegraphics[width=0.4\textwidth]{pictures/1000_N_avg_it.jpg}
+  \includegraphics[width=0.4\textwidth]{pictures/10000_N_avg_it.jpg}
   \caption{Comparison of average iterations for networks of size 100, 1000, and 10000.\\
   On the x-axis we have the reinforcement strength \(a\) and on the 
   y-axis the exponential $d$ determing the order $O\left(N^d\right)$
@@ -749,8 +753,8 @@ convergence becomes possible, decreases as \(N\) grows.
 In other words, larger networks allow for stable dynamics even in 
 progressively sparser reinforcement (\(d\)) regimes, suggesting a scaling 
 law \(d_{\min}(N)\to d_\infty<2\) that merits analytic characterization.
-\\~\\
-%
+\vspace{0.5em}
+
 Overall, these heatmaps demonstrate that sparse positive reinforcement 
 can stabilize large random networks, but only within a narrowing 
 window of sparsity and strength. Highlighting the need for further 
@@ -784,7 +788,7 @@ In this chapter we explore the two main types of RC models: Liquid State Machine
 %attach figure called 'RC_picture.png' here with a caption
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{RC_picture.png}
+    \includegraphics[width=0.8\textwidth]{pictures/RC_picture.png}
     \caption{Reservoir Computing framework. The reservoir is a fixed recurrent neural 
     network that transforms input data into a high-dimensional space. The readout layer 
     is trained to perform the specific task.}
@@ -797,8 +801,8 @@ was developed with a strong emphasis on the computational capabilities of biolog
 neural microcircuits within the brain \cite{Maass2002, Maass2004, Maass2011}.\\
 The primary motivation behind LSMs was to create biologically relevant learning models 
 using spiking neural networks (SNNs) with recurrent connectivity.
-\\~\\
-%
+\vspace{0.5em}
+
 The computational framework of an LSM is similar to the general RC architecture, 
 consisting of a reservoir (usually known as the Liquid) and a readout layer. In LSMs, 
 the liquid is typically composed of excitatory and inhibitory spiking neurons. 
@@ -842,8 +846,8 @@ emerged independently of Liquid State Machines (LSMs) around the same time. Whil
 ESNs and LSMs share the core principles of using a fixed RNN as a 
 reservoir and training only a readout layer, they differ in their specific reservoir 
 implementation.
-\\~\\
-%
+\vspace{0.5em}
+
 In contrast to the spiking neural networks typically used in LSMs which operate in 
 continuous time and use spike sequences as inputs, ESNs employ reservoirs 
 composed of discrete-time artificial neurons, often with sigmoid-type activation 
@@ -897,8 +901,8 @@ almost never happens.\vspace{-0.25em}
 \end{equation}
 In the large $N$ limit, this probability approaches 1 when $P < 2N$ and approaches 0 when 
 $P > 2N$. We thus conclude the capacity of the perceptron to be $2N$.
-\\~\\
-%
+\vspace{0.5em}
+
 Surprisingly, empirical observations \cite{Student2024} have shown that passing the data through a 
 Random RNN (properly constructed so as to make the dynamics stable and non-trivial) as a 
 preprocessing step can increase the capacity of the perceptron. This is due to the fact that the 
@@ -968,8 +972,8 @@ In the last chapter we introduced the general architecture behind MLCMs, we now
 proceed with providing a more formal definition of the model and its components. \\
 Let's consider the simple case in which an input of size $N$ is passed through $L$ layers
 of RNNs, each of size $N$, and then through a classifier head of size $M$.
-\\~\\
-%
+\vspace{0.5em}
+
 The model is composed of:
 \begin{itemize}
     \itemsep-5pt
@@ -1038,8 +1042,8 @@ parameters either affect the stability of the dynamics or the flow of informatio
 upon which learning is based on for the other hyperparameters. They are best thought 
 of as intrinsic properties of the network and, while it is possible to have them vary 
 in time, they are usually treated as constant hyperparameters.
-\\~\\
-%
+\vspace{0.5em}
+
 At each iteration, the training protocol is divided in two steps: 
 \begin{enumerate}
     \itemsep-5pt
@@ -1080,8 +1084,8 @@ update the states:
 \end{itemize}
 In practice, the last two methods are the most commonly used because they parallelize 
 the computations through matrix multiplication and are thus much faster.
-\\~\\
-%
+\vspace{0.5em}
+
 Usually at each iteration of training, the hidden layer states are initialized to a 
 fixed initial state. This is done both to reduce the level of noise in the network as
 well as to allow for batching during training, which will be discussed later.
@@ -1110,8 +1114,8 @@ rule to update the weights $J_{ij}^l$ with learning rate $\eta > 0$ as follows:
 Unlike equation \ref{eq:si_update}, this update rule actively ignores the contributions
 from both itself and $\left(\mathbf{s}^{l+1}_{\infty}\right)_i$ precisely becauuse we 
 want we want the model at inference to only depend on the influence of the input. 
-\\~\\
-%
+\vspace{0.5em}
+
 The output weights $W^{\mathrm{fwd}}$ are more straightforward to train, they can 
 either be trained through the perceptron learning rule or using cross-entropy loss. 
 Either way, at each iteration we check whether the output $\mathbf{y}$ is predictable 
@@ -1138,15 +1142,94 @@ perceptron classifiers trained on the same data, highlighting any practical
 advantages or shortcomings. The third experiment investigates modifications to the 
 original MLCM design, including the use of binary \(\{0,1\}\) states to enforce 
 neural sparsity, and assesses their impact on empirical behavior. \\
+We will be focusing specifically on classification tasks with binary inputs, as they 
+lend themselves best to the current MLCM formulation. However, this constraint can 
+easily be relaxed in future work by making minor modifications to the architecture. \\
 Through these exploratory studies, we aim to provide an initial foundation for 
 understanding the empirical properties of MLCMs and to identify promising directions 
 for future research and architectural refinement.
 
-\section{Baseline Implementation with MNIST dataset}
+\section{Baseline Implementation with Classical datasets}
 
 \subsection{Experimental Setup}
+In this first experiment, we evaluate the basic empirical feasibility of MLCMs on 
+the multiple basic datasets: Binary MIST (both original and projected down) and 
+Fashion MNIST and entangled Fashion MNIST (both original and projected down). 
+MNIST is a widely used dataset consisting of $28 \times 28$ grayscale images of 
+handwritten digits ($0$-$9$), with $60,\!000$ samples for training and $10,\!000$ 
+for testing. The task is to correctly classify each image into 
+one of $10$ classes. Fashion MNIST is a similar dataset composed of $28 \times 28$ 
+grayscale images of clothing items, also with $10$ classes. When we refer to 
+projected down MNIST and fashion MNIST, we mean that the images are passed through 
+a fixed linear projection that scales them down to a smaller dimension\footnote{As 
+long as the projection $W$ is fixed for each input it doesn't matter too much what 
+its values actually are}, 100 in our 
+case. This lossy transformation makes the dataset more complicated to learn and 
+acts as a more challenging test for the model. 
+We employ a binarized version of the datasets, where each pixel is either black 
+(denoted 0) or white (denoted 1).
+%
+\subsubsection*{Model Architecture}
+The MLCM employed in this experiment consists of $5$ layers of random recurrent 
+neural networks, each of size $N=1000$. Since there is a mismatch between the 
+input and the RNN size, we pad the inputs with zeroes so as to get the 
+the input dimension $d$ up to $N$. \\
+To favour the forward flow of information over the backward one, we set the left 
+ferromagnetic strength to be higher than the right one. The main 
+hyperparameters are: $\lambda^1_L, \lambda^2_L, \lambda^3_L, \lambda^4_L, 
+\lambda^5_L = 6.0, 4.0, 4.0, 4.0, 4.0$ and $\lambda^1_R, \lambda^2_R, \lambda^3_R, 
+\lambda^4_R, \lambda^5_R = 2.0, 2.0, 2.0, 2.0, 1.5$, then $J_D^l = 0.1 \hspace{5pt} 
+\forall l$, $\lambda_{\mathrm{IN}} = 6.0$ and $\lambda_{\mathrm{OUT}} = 12.0$.
+%
+\subsubsection*{Evaluation}
+Performance is measured by classification accuracy on the held-out MNIST test set. 
+We report the average accuracy over 10 random initializations of the MLCM weights to 
+assess robustness. Training and evaluation are conducted for a fixed number of 
+epochs, it turns out that 20 is enough, and the best accuracy achieved is documented.
+%
+\subsubsection*{Baseline Comparison}
+To contextualize the results, we compare the accuracy of the MLCM-based classifier 
+to that of a simple single-layer perceptron trained directly on the raw input vectors, 
+using the same number of training epochs and analogous learning rules.
+\vspace{0.5em}
 
+This experimental setup allows us to assess whether MLCMs can successfully learn 
+meaningful internal representations on a standard machine learning benchmark, and 
+provides a foundation for more detailed investigations in subsequent experiments.
 \subsection{Results}
+\newcommand{\experimentlength}{1}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{\experimentlength\textwidth}
+        \includegraphics[width=\linewidth]{pictures/mnist_exp1.png}
+        \caption{}\label{fig:mnist_exp1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\experimentlength\textwidth}
+        \includegraphics[width=\linewidth]{pictures/projected_mnist_exp1.png}
+        \caption{}\label{fig:emnist_exp1}
+    \end{subfigure}
+    \caption{Comparison of testing and validation accuracy per epoch for MLCM and the 
+    Perceptron (Single Layer Network  - SLN) on MNIST (Fig.  
+    \ref{fig:mnist_exp1}) and Projected MNIST (Fig. \ref{fig:emnist_exp1}).}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{\experimentlength\textwidth}
+        \includegraphics[width=\linewidth]{pictures/fashion_mnist_exp1.png}
+        \caption{}\label{fig:fashion_mnist_exp1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\experimentlength\textwidth}
+        \includegraphics[width=\linewidth]{pictures/projected_fashion_mnist_exp1.png}
+        \caption{}\label{fig:efashion_mnist_exp1}
+    \end{subfigure}
+    \caption{Comparison of testing and validation accuracy per epoch for MLCM and the 
+    Perceptron (Single Layer Network  - SLN) on Fashion MNIST (Fig.  
+    \ref{fig:fashion_mnist_exp1}) and Projected MNIST (Fig. \ref{fig:efashion_mnist_exp1}).}
+    \label{fig:mlcm_vs_perceptron}
+\end{figure}
 
 \section{Going Beyond the Perceptron}
 

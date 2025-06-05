@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  4 JUN 2025 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.26)  5 JUN 2025 12:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,7 +513,9 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip91
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
@@ -531,6 +533,11 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count331
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count332
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count333
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerbox@background=\box67
@@ -550,32 +557,32 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowwidth=\dimen281
 \pgfarrowlinewidth=\dimen282
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 35.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
+\l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box69
 ) (./draft.aux)
 \openout1 = `draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -613,16 +620,16 @@ LaTeX Font Info:    ... okay on input line 37.
 
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
+\scratchcounter=\count335
 \scratchdimen=\dimen283
 \scratchbox=\box70
-\nofMPsegments=\count334
-\nofMParguments=\count335
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count336
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen284
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks41
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -630,7 +637,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 37.
+Package hyperref Info: Link coloring ON on input line 39.
  (./draft.out) (./draft.out)
 \@outlinefile=\write4
 \openout4 = `draft.out'.
@@ -638,7 +645,7 @@ Package hyperref Info: Link coloring ON on input line 37.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
@@ -652,14 +659,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--47
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.60 \thispagestyle{empty}\mbox{}\newpage
+l.62 \thispagestyle{empty}\mbox{}\newpage
                                           [2]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 \newpage
+l.69 \newpage
               [3
 
 ]
@@ -668,7 +675,7 @@ l.67 \newpage
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.69 \thispagestyle{empty}\mbox{}\newpage
+l.71 \thispagestyle{empty}\mbox{}\newpage
                                           [4] (./draft.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -686,21 +693,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 83--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--139
-
- []
-
-
 
 [3
 
@@ -731,23 +723,8 @@ Chapter 2.
 ]
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 335--345
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 361--377
-
- []
-
-
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 409--418
-
- []
-
-
 
 [13]
 
@@ -756,7 +733,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 409--418
 [15]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--502
+Underfull \hbox (badness 10000) in paragraph at lines 499--505
 
  []
 
@@ -765,85 +742,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 496--502
 [16
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 528--548
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 528--548
-
- []
-
-
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 552--561
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--561
-
- []
-
-
 
 [18]
-<Critical_JD_vs_Neurons.jpg, id=412, 765.86125pt x 458.71375pt>
-File: Critical_JD_vs_Neurons.jpg Graphic file (type jpg)
-<use Critical_JD_vs_Neurons.jpg>
-Package pdftex.def Info: Critical_JD_vs_Neurons.jpg  used on input line 596.
+<pictures/Critical_JD_vs_Neurons.jpg, id=412, 765.86125pt x 458.71375pt>
+File: pictures/Critical_JD_vs_Neurons.jpg Graphic file (type jpg)
+<use pictures/Critical_JD_vs_Neurons.jpg>
+Package pdftex.def Info: pictures/Critical_JD_vs_Neurons.jpg  used on input line 600.
 (pdftex.def)             Requested size: 364.19667pt x 218.13628pt.
-<Average_conv_time.jpg, id=414, 862.22125pt x 547.04375pt>
-File: Average_conv_time.jpg Graphic file (type jpg)
-<use Average_conv_time.jpg>
-Package pdftex.def Info: Average_conv_time.jpg  used on input line 620.
+<pictures/Average_conv_time.jpg, id=414, 862.22125pt x 547.04375pt>
+File: pictures/Average_conv_time.jpg Graphic file (type jpg)
+<use pictures/Average_conv_time.jpg>
+Package pdftex.def Info: pictures/Average_conv_time.jpg  used on input line 624.
 (pdftex.def)             Requested size: 364.19667pt x 231.0673pt.
 
 
-[19 <./Critical_JD_vs_Neurons.jpg>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./Average_conv_time.jpg>]
-<100_N_avg_it.jpg, id=432, 679.53876pt x 565.11125pt>
-File: 100_N_avg_it.jpg Graphic file (type jpg)
-<use 100_N_avg_it.jpg>
-Package pdftex.def Info: 100_N_avg_it.jpg  used on input line 692.
+
+
+[19 <./pictures/Critical_JD_vs_Neurons.jpg>]
+
+[20 <./pictures/Average_conv_time.jpg>]
+<pictures/100_N_avg_it.jpg, id=432, 679.53876pt x 565.11125pt>
+File: pictures/100_N_avg_it.jpg Graphic file (type jpg)
+<use pictures/100_N_avg_it.jpg>
+Package pdftex.def Info: pictures/100_N_avg_it.jpg  used on input line 696.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
-<1000_N_avg_it.jpg, id=433, 679.53876pt x 565.11125pt>
-File: 1000_N_avg_it.jpg Graphic file (type jpg)
-<use 1000_N_avg_it.jpg>
-Package pdftex.def Info: 1000_N_avg_it.jpg  used on input line 693.
+<pictures/1000_N_avg_it.jpg, id=433, 679.53876pt x 565.11125pt>
+File: pictures/1000_N_avg_it.jpg Graphic file (type jpg)
+<use pictures/1000_N_avg_it.jpg>
+Package pdftex.def Info: pictures/1000_N_avg_it.jpg  used on input line 697.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
-<10000_N_avg_it.jpg, id=434, 679.53876pt x 565.11125pt>
-File: 10000_N_avg_it.jpg Graphic file (type jpg)
-<use 10000_N_avg_it.jpg>
-Package pdftex.def Info: 10000_N_avg_it.jpg  used on input line 694.
+<pictures/10000_N_avg_it.jpg, id=434, 679.53876pt x 565.11125pt>
+File: pictures/10000_N_avg_it.jpg Graphic file (type jpg)
+<use pictures/10000_N_avg_it.jpg>
+Package pdftex.def Info: pictures/10000_N_avg_it.jpg  used on input line 698.
 (pdftex.def)             Requested size: 182.09486pt x 151.4266pt.
 
 
 [21]
 
-[22 <./100_N_avg_it.jpg> <./1000_N_avg_it.jpg> <./10000_N_avg_it.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 746--759
-
- []
-
-
+[22 <./pictures/100_N_avg_it.jpg> <./pictures/1000_N_avg_it.jpg> <./pictures/10000_N_avg_it.jpg>]
 
 [23]
 Chapter 4.
-<RC_picture.png, id=459, 687.56876pt x 521.95pt>
-File: RC_picture.png Graphic file (type png)
-<use RC_picture.png>
-Package pdftex.def Info: RC_picture.png  used on input line 787.
+<pictures/RC_picture.png, id=459, 687.56876pt x 521.95pt>
+File: pictures/RC_picture.png Graphic file (type png)
+<use pictures/RC_picture.png>
+Package pdftex.def Info: pictures/RC_picture.png  used on input line 791.
 (pdftex.def)             Requested size: 364.19667pt x 276.46492pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 795--808
-
- []
 
 
 
@@ -851,12 +802,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 795--808
 
 ]
 
-[25 <./RC_picture.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 840--852
-
- []
-
-
+[25 <./pictures/RC_picture.png (PNG copy)>]
 
 [26]
 
@@ -867,9 +813,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 840--852
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 897--911
-
- []
+Overfull \vbox (2.97273pt too high) has occurred while \output is active []
 
 
 
@@ -881,7 +825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 897--911
 )
 
 [30] (./diagrams/MLCM.tex)
-Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--960
+Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--964
  [][] 
  []
 
@@ -890,34 +834,14 @@ Overfull \hbox (1.5999pt too wide) in paragraph at lines 99--960
 [31]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--974
-
- []
-
-
 
 [32
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1035--1044
-
- []
-
-
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1088
-
- []
-
-
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1122
-
- []
-
-
 
 [35]
 Chapter 7.
@@ -928,51 +852,80 @@ Chapter 7.
 ]
 
 [37]
+<pictures/mnist_exp1.png, id=561, 1726.5303pt x 427.8384pt>
+File: pictures/mnist_exp1.png Graphic file (type png)
+<use pictures/mnist_exp1.png>
+Package pdftex.def Info: pictures/mnist_exp1.png  used on input line 1205.
+(pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
+<pictures/projected_mnist_exp1.png, id=563, 1727.253pt x 427.8384pt>
+File: pictures/projected_mnist_exp1.png Graphic file (type png)
+<use pictures/projected_mnist_exp1.png>
+Package pdftex.def Info: pictures/projected_mnist_exp1.png  used on input line 1210.
+(pdftex.def)             Requested size: 455.24411pt x 112.76297pt.
+<pictures/fashion_mnist_exp1.png, id=568, 1726.5303pt x 427.8384pt>
+File: pictures/fashion_mnist_exp1.png Graphic file (type png)
+<use pictures/fashion_mnist_exp1.png>
+Package pdftex.def Info: pictures/fashion_mnist_exp1.png  used on input line 1220.
+(pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
+<pictures/projected_fashion_mnist_exp1.png, id=569, 1726.5303pt x 427.8384pt>
+File: pictures/projected_fashion_mnist_exp1.png Graphic file (type png)
+<use pictures/projected_fashion_mnist_exp1.png>
+Package pdftex.def Info: pictures/projected_fashion_mnist_exp1.png  used on input line 1225.
+(pdftex.def)             Requested size: 455.24411pt x 112.80867pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[38 <./pictures/mnist_exp1.png> <./pictures/projected_mnist_exp1.png>]
+
+[39 <./pictures/fashion_mnist_exp1.png> <./pictures/projected_fashion_mnist_exp1.png>]
 Chapter 8.
 (./draft.bbl
 
-[38
+[40
 
 ]
 
-[39
+[41
 
 ]
-
-[40]
-
-[41])
 
 [42]
+
+[43])
+
+[44]
 Appendix A.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1184.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1267.
 
 
-[43
+[45
 
 ]
 
-[44] (./draft.aux)
+[46] (./draft.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: C9F421CD13B6773E1F21379AB98F3CB3;7112.
+(rerunfilecheck)             Checksum: 3B9CC15766A67789426D87CBE419AD3E;7137.
  ) 
 Here is how much of TeX's memory you used:
- 24689 strings out of 473201
- 458131 string characters out of 5720299
- 852424 words of memory out of 5000000
- 47353 multiletter control sequences out of 15000+600000
- 571809 words of font info for 86 fonts, out of 8000000 for 9000
+ 24847 strings out of 473201
+ 462069 string characters out of 5720299
+ 854689 words of memory out of 5000000
+ 47500 multiletter control sequences out of 15000+600000
+ 572109 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,87p,600b,881s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,87p,600b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on draft.pdf (48 pages, 1262111 bytes).
+Output written on draft.pdf (50 pages, 1891230 bytes).
 PDF statistics:
- 736 PDF objects out of 1000 (max. 8388607)
- 629 compressed objects within 7 object streams
- 182 named destinations out of 1000 (max. 500000)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 770 PDF objects out of 1000 (max. 8388607)
+ 649 compressed objects within 7 object streams
+ 190 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 
