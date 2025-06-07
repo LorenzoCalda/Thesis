@@ -1395,12 +1395,40 @@ Another important observation is the presence of a sharp drop in the model's lea
 abilities as $\gamma$ increases, this is due to the fact that forcing too many neurons 
 to be inactive at once leads to a loss of information in the network to the point 
 where it is no longer able to create meaningful representations of the data. After the 
-$\gamma = 0.1$ threshold, the MLCM is not able to be trained and its performance resembles 
-that of random classifer. \\
-These results confirm the presence of a trade-off between sparsity and performance
+$\gamma = 0.1$ threshold (corresponding to a sparsity of $\sim25\%$), the MLCM is not 
+able to be trained and its performance resembles that of random classifer. \\
+These results confirm the presence of a trade-off between sparsity and performance. 
+Specifically, while increased sparsity can yield greater biological plausibility and 
+reduced computational cost, it also leads to a measurable decline in the network's 
+accuracy and memory capacity, thus highlighting the importance of careful tuning of the 
+sparsity level to balance these competing objectives.
 \subsection{Winner-Takes-All Sparsity}
-
 \subsubsection*{Experimental Setup}
+We now turn our attention to another approach for sparsity enforcement, denoted as 
+Winner-Takes-All (WTA). In this method, the threshold function $\boldsymbol{\gamma}$ 
+is set to a dynamic value that depends on the activation of the neurons in the
+current layer. Specifically, we define a predetermined sparsity level $\delta^l$ 
+for each layer $l$ and then activate the $N\delta^l$ neurons with the highest 
+pre-activation signal, while the rest are set to zero. In other words:
+$$ \boldsymbol{\gamma}(l) = Q\left(\delta^l\right)$$
+Where $Q\left(\delta^l\right)$ is the quantile function of $\hspace{3pt} \left(\displaystyle
+\sum_{j \neq i} J_{ij}^l s_j^l(t) + J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l \, 
+s_i^{l-1}(t) + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)  - \kappa_i^l\right)$.
+This approach allows us to dynamically adjust the threshold of each layer to maintain 
+a fixed sparsity level, while still allowing for some neurons to be active at each
+time step. \\
+There are several regions of the brain which are thought to work similarly, and in 
+theoretical neuroscience the WTA mechanism is widely used for modelling purposes
+\cite{Marx2015, Carandini2011}. \\
+
+We employ the same experimental setup as in the previous tests: testing on MNIST, maintaining 
+the same architecture and hyperparameters, training for $25$ epochs and repeating each 
+result $5$ times. We fit one model for each value of $\delta$ in the set 
+$\{0.5, 0.475, 0.45, 0.4, 0.35\}$. Due to influence of the input and the output on 
+the first and last layer, we forgo a WTA-based sparsity implementation for them an 
+instead revert back to a fixed threshold of $\gamma = 0$ to ensure that there is no 
+loss of information. Thus the first layer and last layers will have no sparsity 
+enforcement while the middle layers will all be constrained to a sparsity of $\delta$.
 \subsubsection*{Results}
 
 \chapter{Conclusions and Future Directions}

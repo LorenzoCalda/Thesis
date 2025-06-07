@@ -31,8 +31,8 @@
 \contentsline {section}{\numberline {7.2}Sparsity Enforcement in MLCMs}{40}{section.7.2}%
 \contentsline {subsection}{\numberline {7.2.1}Fixed Threshold Sparsity}{42}{subsection.7.2.1}%
 \contentsline {subsection}{\numberline {7.2.2}Winner-Takes-All Sparsity}{44}{subsection.7.2.2}%
-\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{45}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Summary of Contributions}{45}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{45}{section.8.2}%
-\contentsline {chapter}{References}{45}{section.8.2}%
-\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{50}{appendix.A}%
+\contentsline {chapter}{\numberline {8}Conclusions and Future Directions}{46}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Summary of Contributions}{46}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Limitations and Open Questions}{46}{section.8.2}%
+\contentsline {chapter}{References}{46}{section.8.2}%
+\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{51}{appendix.A}%

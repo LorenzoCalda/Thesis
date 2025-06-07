@@ -31,6 +31,11 @@ Pierre Baldi.
 \newblock {\em Deep Learning in Science}.
 \newblock Cambridge University Press, April 2021.
 
+\bibitem{Carandini2011}
+Matteo Carandini and David~J. Heeger.
+\newblock Normalization as a canonical neural computation.
+\newblock {\em Nature Reviews Neuroscience}, 13(1):51--62, November 2011.
+
 \bibitem{Chengxiang2000}
 Zhang Chengxiang, Chandan Dasgupta, and Manoranjan~P. Singh.
 \newblock Retrieval properties of a hopfield model with random asymmetric interactions.
@@ -128,6 +133,11 @@ Wolfgang Maass and Henry Markram.
 Wolfgang Maass, Thomas Natschl\"{a}ger, and Henry Markram.
 \newblock Real-time computing without stable states: A new framework for neural computation based on perturbations.
 \newblock {\em Neural Computation}, 14(11):25312560, November 2002.
+
+\bibitem{Marx2015}
+Svenja Marx, Gina Gruenhage, Daniel Walper, Ueli Rutishauser, and Wolfgang Einh\"{a}user.
+\newblock Competition with and without priority control: linking rivalry to attention through winner-take-all networks with memory.
+\newblock {\em Annals of the New York Academy of Sciences}, 1339(1):138--153, January 2015.
 
 \bibitem{McCulloch1943}
 Warren~S. McCulloch and Walter Pitts.
