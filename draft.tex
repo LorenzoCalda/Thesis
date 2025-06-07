@@ -3,7 +3,7 @@
 % Page numbering starts after front matter.
 
 \documentclass[a4paper,12pt]{report}
-\usepackage[paperwidth=21cm,paperheight=29.7cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[paperwidth=21cm,paperheight=29.7cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,margin=1in,footskip=0.3in]{geometry}
 \usepackage{setspace}
 \usepackage{tocloft}
 \usepackage{parskip}
@@ -19,7 +19,9 @@
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{caption}
-
+\usepackage{dsfont}
+\usepackage{kantlipsum}
+\usepackage{fancyhdr}
 \usetikzlibrary{backgrounds, shapes.geometric, positioning, fit, arrows.meta}
 
 
@@ -36,6 +38,8 @@
   pdfpagemode=FullScreen,
 }
 
+\renewcommand{\footrulewidth}{0.4pt}
+
 \begin{document}
 % Ensure 26-30 lines per page: adjust leading
 \setstretch{1.5}
@@ -49,9 +53,10 @@
 \begin{enumerate}
     \item {\textcolor{green}{Come up with a title for the thesis}}
     \item Write acknowledgements
-    \item Provide better description of MLCM in Introduction.
+    \item \textcolor{green}{Provide better description of MLCM in Introduction}
     \item {\textcolor{green}{Fix introduction of Hopfield Network chapter}}
-    \item Find name of student who authored the other thesis
+    \item \textcolor{green}{Find name of student who authored the other thesis}
+    \item Fix description of experiments in chapter 7
 \end{enumerate}
 
 
@@ -63,6 +68,7 @@
 % 3rd: Dedication / Acknowledgements
 \thispagestyle{empty}
 \chapter*{Acknowledgements}
+I would first like to thank my father and my mother for their 
 % \vspace*{\fill} % uncomment to vertically center
 
 \noindent 
@@ -88,8 +94,8 @@ circuitry: McCulloch and Pitts' formalization of a "neuron” in 1943 and Rosenb
 1958 directly borrowed the idea of interconnected neurons and synapses. \\
 Subsequent developments, such as convolutional architectures and Hopfield networks, each drew on 
 biological analogues to improve learning and memory. While the field of machine learning has already 
-made significant advances—with remarkable achievements in object recognition, natural language 
-processing, and strategic game playing—implementing more biologically plausible models may prove 
+made significant advances, with remarkable achievements in computer vision, natural language 
+processing, and strategic game playing, implementing more biologically plausible models may prove 
 instrumental in solving key issues with today's modern AI architectures.
 \vspace{0.5em}
 
@@ -111,13 +117,13 @@ relationship between FLOPs and size has lead to massive energy requirements to t
 generations of models. \\
 This stands in stark contrast with the brain, whose reported energy consumption grows as 
 $O(N)$ with the number of neurons \cite{10.1371/journal.pone.0017514}; Moreover, under normal 
-conditions a human brain --- composed of roughly $9\times10^{10}$ neurons and $10^{14}$ synapses --- 
+conditions a human brain-composed of roughly $9\times10^{10}$ neurons and $10^{14}$ synapses --- 
 operates only on approximately 20 W. \cite{doi:10.1097/00004647-200110000-00001}
 \vspace{0.5em}
 
 There are multiple factors underlying this efficiency gap, of which two are particularly noteworthy. \\
-First, biological learning relies on local update rules --- synaptic modifications that depend only 
-on signals available at the level of individual neurons --- whereas backpropagation requires global 
+First, biological learning relies on local update rules, synaptic modifications that depend only 
+on signals available at the level of individual neurons, whereas backpropagation requires global 
 error signals to be propagated through every layer of a network.
 \cite{Xu2024} \\
 Second, the brain employs extreme sparsity both in its connectivity and in neuronal firing: at any 
@@ -129,15 +135,19 @@ sacrificing performance.
 
 The content of the thesis will be divided into two parts: \\ 
 In Part I, we review the biological foundations of learning and memory, presenting a systematic 
-outline of key models --- in particular associative networks and reservoir computing --- and the 
-neurophysiological principles that underlie them. \\
-{\color{red} In Part II, we introduce Multi-Layer Chain Models (MLCMs), a novel framework that structures learning 
-as a sequence of locally updated layers with biologically plausible credit assignment. Chapter 5 
-formalizes the MLCM architecture and its learning dynamics; Chapter 6 analyzes theoretical properties 
-such as convergence, expressive capacity, and robustness; and Chapter 7 presents empirical 
-evaluations comparing MLCMs to conventional backprop-based networks in terms of both accuracy and 
-energy efficiency. We conclude by discussing the implications of this work for future research in 
-biologically inspired machine learning.}
+outline of key models, in particular associative networks, random recurrent networks 
+and reservoir computing, and the neurophysiological principles that underlie them. \\
+In Part II, we introduce Multi-Layer Chain Models (MLCMs), a novel 
+framework that structures learning as a sequence of locally updated layers inspired 
+by biological principles. We begin by motivating the architecture through recent 
+findings on the stabilizing effects of random recurrent networks. The mathematical 
+formulation of MLCMs is then developed, including the dynamics of each layer and the 
+mechanisms that allow for local, biologically plausible learning. We further discuss 
+the role of binary and sparse activations in enhancing both biological realism and 
+computational efficiency.
+Finally, we present theoretical analyses and extensive empirical results, comparing 
+MLCMs to conventional architectures and conclude by outlining future research 
+directions for biologically inspired machine learning.
 
 
 
@@ -890,7 +900,7 @@ In this context the measure of complexity is taken to be the maximum number of
 patterns which can be classified correctly by a perceptron. Through the use of 
 Cover's Counting Theorem, it can be shown that for a perceptron with $N$ inputs, the 
 probability of being able to separate $P$\footnote{
-    \setstretch{1}\vspace{-0.15em}It's worth remarking that we must also assume the $P$ points to be in general position, meaning that
+    \setstretch{1}It's worth remarking that we must also assume the $P$ points to be in general position, meaning that
 no subset of size less than N is linearly dependent. In practice this is a very mild condition and 
 almost never happens.\vspace{-0.25em}
 } with randomly assigned labels is given by:
@@ -984,11 +994,11 @@ The model is composed of:
     \item \emph{Self Couplings:} A set of self-coupling weights:
     $\{ J_D \hspace{2pt} | \hspace{2pt} J_D \in \mathbb{R}\}_{l=1}^{L}$
     \item \emph{Left Ferromagnetic Couplings:} A set of ferromagnetic connections 
-    connecting the previous layer $l-1$ to the current layer $l$: $ \{ \lambda_L^l 
-    \hspace{2pt} | \hspace{2pt} \lambda_L^1 \in \mathbb{R}\}_{l=2}^L$
+    connecting the previous layer $l-1$ to the current layer $l$: $ \{ \lambda_{\mathrm{L}}^l 
+    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{L}}^1 \in \mathbb{R}\}_{l=2}^L$
     \item \emph{Right Ferromagnetic Couplings:} A set of ferromagnetic connections
-    connecting the next layer $l+1$ to the current layer $l$: $\{ \lambda_R^l
-    \hspace{2pt} | \hspace{2pt} \lambda_R^L \in \mathbb{R}\}_{l=1}^{L-1}$
+    connecting the next layer $l+1$ to the current layer $l$: $\{ \lambda_{\mathrm{R}}^l
+    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{R}}^L \in \mathbb{R}\}_{l=1}^{L-1}$
     \item \emph{Input Coupling:} A value determining the strength that the input data
     applies to the first layer in the form of an external field: $\lambda_{\mathrm{IN}} 
     \in \mathbb{R}$
@@ -1016,13 +1026,13 @@ following dynamics:
     s_i^l(t+1) = 
     \begin{cases}
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_R^l\, s_i^{l+1}(t)
+        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
         \right) & \text{if } l = 1 \\[2ex]
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_R^l\, s_i^{l+1}(t)
+        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
         \right) & \text{if } 1 < l < L \\[2ex]
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
+        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
         \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k\right) & \text{if } l = L
     \end{cases}
     \label{eq:si_update}
@@ -1100,14 +1110,14 @@ only through the forward flow. \\
 In other words, after reaching the convergence step consider a neuron $i$ in layer 
 $l$: we can see it as a perceptron which as inputs has the other neurons in the same 
 layer and neuron $i$ in layer $l-1$, as pre-activation signal has: $\sum_{j \neq i} 
-J_{ij}^l \left(\mathbf{s}^{l}_{\infty}\right)_j + \lambda_L^l\, 
+J_{ij}^l \left(\mathbf{s}^{l}_{\infty}\right)_j + \lambda_{\mathrm{L}}^l\, 
 \left(\mathbf{s}^{l-1}_{\infty}\right)_i$ and as output we want to predict has 
 $\left(\mathbf{s}^{l}_{\infty}\right)_i$. We can then apply the perceptron learning
 rule to update the weights $J_{ij}^l$ with learning rate $\eta > 0$ as follows:
 \begin{equation}
     J_{ij}^l \leftarrow J_{ij}^l + \eta \left(\left(\mathbf{s}^{l}_{\infty}\right)_i -
     \operatorname{sign}\left(\sum_{j \neq i} J_{ij}^l
-    \left(\mathbf{s}^{l}_{\infty}\right)_j + \lambda_L^l\,
+    \left(\mathbf{s}^{l}_{\infty}\right)_j + \lambda_{\mathrm{L}}^l\,
     \left(\mathbf{s}^{l-1}_{\infty}\right)_i\right)\right)
     \left(\mathbf{s}^{l}_{\infty}\right)_j
 \end{equation}
@@ -1163,13 +1173,13 @@ for testing. The task is to correctly classify each image into
 one of $10$ classes. Fashion MNIST is a similar dataset composed of $28 \times 28$ 
 grayscale images of clothing items, also with $10$ classes. When we refer to 
 projected down MNIST and fashion MNIST, we mean that the images are passed through 
-a fixed linear projection that scales them down to a smaller dimension\footnote{As 
-long as the projection $W$ is fixed for each input it doesn't matter too much what 
+a fixed linear projection that scales them down to a smaller dimension\footnote{
+\setstretch{1}As long as the projection $W$ is fixed for each input it doesn't matter too much what 
 its values actually are}, 100 in our 
 case. This lossy transformation makes the dataset more complicated to learn and 
 acts as a more challenging test for the model. 
 We employ a binarized version of the datasets, where each pixel is either black 
-(denoted 0) or white (denoted 1).
+(denoted -1) or white (denoted 1).
 %
 \subsubsection*{Model Architecture}
 The MLCM employed in this experiment consists of $5$ layers of random recurrent 
@@ -1245,35 +1255,71 @@ validation accuracy, indicating that their internal representations better highl
 important features and reduce overfitting. These initial results suggest that 
 MLCM-based preprocessing positively impacts perceptron performance and that the 
 architecture is capable of learning meaningful internal representations of the data.
-\section{Going Beyond the Perceptron}
-
-\subsection{Experimental Setup}
-\subsection{Results}
 
 \section{Sparsity Enforcement in MLCMs}
-The reliance on $\{-1, 1\}$ states in the standard formulations of perceptrons and MLCMs
+The reliance on $s_i \in \{-1, 1\}$ states in the standard formulations of perceptrons and MLCMs
 is not biologically realistic, as biological neurons are typically either silent or 
 active. A better framework to model biological neurons is to use binary states which 
-take values in $\{0, 1\}$, where $0$ represents a silent neuron and $1$ an active one.\\
-With this change, the dynamics of the MLCM described in equation
-\ref{eq:si_update} are expressed as:
+take values in $z_i \in \{0, 1\}$, where $0$ represents a silent neuron and $1$ an active one.\\
+We can express the $\{-1, 1\}$ states as the $\{0, 1\}$ states through: 
+$s_i^l(t) = 2 \, z_i^l(t) - 1$. Then equation \ref{eq:si_update} can be rewritten as:
+\begin{align*}
+    z_i^l(t) &= \frac{1}{2} \left( \, \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l 
+    (2 \, z_j^l(t) - 1) + J_D\, (2 \, z_i^l(t) - 1) + \lambda_{\mathrm{L}}^l\, (2 \, 
+    z_i^{l-1}(t) - 1) + \lambda_{\mathrm{R}}^l\, ((2 \, z_i^{l+1}(t) - 1))\right) + 1 \right)\\
+    &= \boldsymbol{\theta}\left(2 \, \left( \sum_{j \neq i} J_{ij}^l 
+    z_j^l(t) + J_D\, z_i^l(t) + \lambda_{\mathrm{L}}^l \, z_i^{l-1}(t) + \lambda_{\mathrm{R}}^l \, 
+    z_i^{l+1}(t) \right) - \left( \sum_{j \neq i} J_{ij}^l + J_D + \lambda_{\mathrm{L}}^l
+    + \lambda_{\mathrm{R}}^l \right) \right) \\
+    &= \boldsymbol{\theta}\left(\sum_{j \neq i} J_{ij}^l z_j^l(t) + J_D\, z_i^l(t) + 
+    \lambda_{\mathrm{L}}^l \, z_i^{l-1}(t) + \lambda_{\mathrm{R}}^l \, z_i^{l+1}(t) - 
+    \frac{1}{2} \left(\sum_{j \neq i} J_{ij}^l + J_D + \lambda_{\mathrm{L}}^l + 
+    \lambda_{\mathrm{R}}^l\right) \right) \\
+    &= \boldsymbol{\theta}\left(\sum_{j \neq i} J_{ij}^l z_j^l(t) + J_D\, z_i^l(t) + 
+    \lambda_{\mathrm{L}}^l \, z_i^{l-1}(t) + \lambda_{\mathrm{R}}^l \, z_i^{l+1}(t) - 
+    \kappa_i^l\right)
+\end{align*}
+Where $\boldsymbol{\theta}(x) = \mathds{1}_{x \geq 0} = \frac{1}{2} \, \left( \operatorname{sign}(x)
++ 1\right)$ is the Heaviside function and $$\kappa_i^l = \frac{1}{2} \left(\sum_{j \neq i} 
+J_{ij}^l + J_D + \lambda_{\mathrm{L}}^l + \lambda_{\mathrm{R}}^l\right)$$ is a 
+constant threshold resulting from the conversion from $\{-1, 1\}$ to $\{0, 1\}$ 
+states. With a similar computation you can obtain similar results in the $l=1$ and $l=L$
+cases, obtaining:
+$$ \kappa_i^1 = \frac{1}{2}\left(\sum_{j \neq i} J_{ij}^l + J_D + 
+\lambda_{\mathrm{IN}}^l + \lambda_{\mathrm{R}}^l\right), \hspace{20pt} 
+\kappa_i^L = \frac{1}{2}\left(\sum_{j \neq i} J_{ij}^l + J_D + 
+\lambda_{\mathrm{L}}^l\right)$$
+The output $\mathbf{y}$ is not not transformed from $\{-1, 1\}$ to $\{0, 1\}$, while 
+the input $\mathbf{x}$ is, thus $\kappa_i^L$ does not include a 
+$\lambda_{\mathrm{OUT}}\sum_{k=1}^{M} W_{ik}^{\mathrm{back}}$ that would at first glance
+be expected.
+\vspace*{0.5em}
+
+Switching from $z_i^l(t)$ back to $s_i^l(t)$, the dynamics of the MLCM in $\{0, 1\}$ 
+case are expressed in the as:
 \begin{equation}
     s_i^l(t+1) = 
     \begin{cases}
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_R^l\, s_i^{l+1}(t) - \gamma
+        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l \, 
+        s_i^{l+1}(t) - \kappa_i^l - \boldsymbol{\gamma}
         \right) & \text{if } l = 1 \\[2ex]
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_R^l\, s_i^{l+1}(t)  - \gamma
+        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + 
+        \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)  - \kappa_i^l - \boldsymbol{\gamma}
         \right) & \text{if } 1 < l < L \\[2ex]
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_L^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
-        \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k  - \gamma\right) & \text{if } l = L
+        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) +
+        \frac{\lambda_{\mathrm{OUT}}}{2} \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k  - 
+        \kappa_i^l - \boldsymbol{\gamma}\right) 
+        & \text{if } l = L
     \end{cases}
     \label{eq:si_sparse_update}
 \end{equation}
-Where $\boldsymbol{\theta}$ is the heaviside function and $\gamma$ is a threshold function that 
-regulates the activation of the states. \\
+Where the extra term included, $\boldsymbol{\gamma}$, is a threshold function 
+that regulates the activation of the states.
+\vspace*{0.5em}
+
 This change is not only attractive for the above reason, but also because through the 
 inclusion of an inactive state we can work to enforce sparsity on the network. Human 
 brains are known to be highly activation sparse, with only a small fraction of neurons 
@@ -1292,18 +1338,66 @@ sparsity of the network. Bigger threshold values will lead to less neurons being
 while smaller threshold values will lead to more neurons being activated.
 \vspace*{0.5em}
 
-In this section, we examine two strategies for setting the threshold $\gamma$ : using 
+In this section, we examine two strategies for setting the threshold $\gamma$: using 
 a fixed threshold value for all neurons, and employing a Winner-Takes-All (WTA) 
 mechanism, where only the most strongly activated neurons become active.
 
 \subsection{Fixed Threshold Sparsity}
-In this first experiment, we explore the impact of a fixed threshold value on the 
-sparsity of the MLCM. The threshold is set to a constant value $\gamma^l$ across all 
-neurons in a layer $l$.
-
 \subsubsection*{Experimental Setup}
-\subsubsection*{Results}
+In this first experiment, we explore the impact of a fixed threshold value on the 
+sparsity and the performance of the MLCM. The threshold function is set to a constant 
+value $\boldsymbol{\gamma} = \gamma \in \left[0, +\infty\right]$ across all neurons. The focus of this experiment 
+is not necessarily on achieving the best performance, but rather gain a better 
+understanding of the trade-off between compression of the network through sparsity and 
+the predictive capability of the network. For this reason we will be solely working on 
+a single dataset, MNIST.
+\vspace*{0.5em}
 
+%Model Architecture
+We will be using the same MLCM architecture as in the previous experiment, constructing 
+one model for each value of $\gamma$ in the set $\{0.0, 0.025, 0.05, 0.1, 
+0.15, 0.2\}$. The remaining hyperparameters are kept the same as in the previous 
+experiment. \\
+For each run we measure the training and validation accuracy at each epoch, as well as 
+the sparsity for each layer of the network. Each model is trained for $25$ epochs and 
+for robustness of the results, we will be averaging the results over $5$ random 
+initializations of the MLCM weights.
+
+\subsubsection*{Results}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{pictures/mnist_exp2_1.png}
+        \caption{}\label{fig:mnist_exp2_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{1\textwidth}
+        \includegraphics[width=\linewidth]{pictures/mnist_accs_exp2_1.png}
+        \caption{}\label{fig:mnist_accs_exp2_1}
+    \end{subfigure}
+    \caption{Fig. \ref{fig:mnist_exp2_1} displays the sparsity of each layer in the 
+    final epoch of training and the final training and validation accuracy for each 
+    value of $\gamma$, reported with a $95\%$ confidence interval.
+    Fig. \ref{fig:mnist_accs_exp2_1} shows the training and validation accuracy per epoch
+    for each value of $\gamma$, reported with a $95\%$ confidence interval.}
+    \label{fig:exp2_1}
+\end{figure}
+The results of the experiment are presented in Fig. \ref{fig:exp2_1}. As can be seen 
+from \ref{fig:mnist_exp2_1}, the sparsity of the middle layers of the network 
+decreases by $\sim10\%$ as $\gamma$ increases from $0$ to $0.2$. The first and the 
+last layer maintain a constant sparsity level of $\sim0.5$, this is due to the 
+strong influence they receive from the non-sparse input and output
+\footnote{Even though $\mathbf{y}$ is one-hot-encoded, 
+the influence it has on the last layer is not sparse since it is passed through the 
+matrix $W^{\mathrm{back}}$}. The fixed states of these layers thus reflect this 
+influence and are less affected by the sparsity threshold. \\
+Another important observation is the presence of a sharp drop in the model's learning 
+abilities as $\gamma$ increases, this is due to the fact that forcing too many neurons 
+to be inactive at once leads to a loss of information in the network to the point 
+where it is no longer able to create meaningful representations of the data. After the 
+$\gamma = 0.1$ threshold, the MLCM is not able to be trained and its performance resembles 
+that of random classifer. \\
+These results confirm the presence of a trade-off between sparsity and performance
 \subsection{Winner-Takes-All Sparsity}
 
 \subsubsection*{Experimental Setup}
