@@ -68,7 +68,32 @@
 % 3rd: Dedication / Acknowledgements
 \thispagestyle{empty}
 \chapter*{Acknowledgements}
-I would first like to thank my father and my mother for their 
+I also wish to extend a special thank you to my high school professor, Dr. Emanuele Ciancio, 
+whose teaching first sparked my passion for mathematics, a passion that has only grown 
+stronger over the years.
+
+I would first like to thank my father and my mother for their sacrifices and 
+encouragements throughout all the successes and failures of my life. I am forever 
+grateful for their love and unconditional support which has lead me to accomplish far 
+more than I could have ever imagined.\\ 
+I would also like to thank my sister Sofia for the unique ``sisterly'' support she 
+has provided me over the years, I hope to always be a big brother you can be proud of. \\
+Special thanks to my grandparent: Antonio, Luciana, Ugo and Vittoria, who have always 
+been there for me with love and affection.
+
+I am deeply grateful to my supervisor, Prof. Riccardo Zecchina, for instilling in me 
+a passion for research and science, and for his invaluable guidance and support 
+throughout the development of this work.\\
+I also wish to extend a special thank you to my high school professor, Dr. Emanuele Ciancio, 
+whose teaching first introduced me to the beauty of mathematics, which I continue to 
+pursue with enthusiasm ever since.
+
+Finally, I am thankful to my friends—Alberto, Alessandro, Ali, Federico, Lorenzo, Luca, 
+Mariano, Sofia, Stefano, Teodoro—and especially to my girlfriend, Chiara, for filling 
+this journey with laughter, encouragement, and unwavering support. Their presence 
+has made even the most challenging times manageable and the successes all the more 
+meaningful, and I am deeply grateful to have shared this experience with them.\\
+
 % \vspace*{\fill} % uncomment to vertically center
 
 \noindent 
@@ -1146,14 +1171,13 @@ Given that MLCMs are a novel approach whose behavior is not yet fully
 characterized, our primary goal is not to achieve state-of-the-art performance, 
 but rather to conduct a series of exploratory experiments that test the basic 
 feasibility and potential of the architecture. \\
-\textcolor{red}{To this end, we outline three main experimental protocols. The first 
-assesses baseline MLCM performance on two key datasets—MNIST and Fashion MNIST—as 
+\textcolor{red}{To this end, we outline two main experimental protocols. The first 
+assesses baseline MLCM performance on two key datasets, MNIST and Fashion MNIST, as 
 well as two more challenging variants. It also compares these results to simple 
 perceptron classifiers trained on the same data, highlighting any practical 
-advantages or drawbacks. The third experiment 
-investigates modifications to the original MLCM design, including the use of binary 
-\(\{0,1\}\) states to enforce neural sparsity, and assesses their impact on empirical 
-behavior. \\}
+advantages or drawbacks. The second experiment investigates a modification to the 
+original MLCM design, switching the use of binary \(\{0,1\}\) states, to enforce neural 
+sparsity, and assesses their impact on empirical behavior. \\}
 We will be focusing specifically on classification tasks with binary inputs, as they 
 lend themselves best to the current MLCM formulation. However, this constraint can 
 easily be relaxed in future work by making minor modifications to the architecture. \\
@@ -1410,7 +1434,7 @@ is set to a dynamic value that depends on the activation of the neurons in the
 current layer. Specifically, we define a predetermined sparsity level $\delta^l$ 
 for each layer $l$ and then activate the $N\delta^l$ neurons with the highest 
 pre-activation signal, while the rest are set to zero. In other words:
-$$ \boldsymbol{\gamma}(l) = Q\left(\delta^l\right)$$
+$$ \boldsymbol{\gamma}(l) = Q\left(1 - \delta^l\right)$$
 Where $Q\left(\delta^l\right)$ is the quantile function of $\hspace{3pt} \left(\displaystyle
 \sum_{j \neq i} J_{ij}^l s_j^l(t) + J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l \, 
 s_i^{l-1}(t) + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)  - \kappa_i^l\right)$.
@@ -1419,7 +1443,10 @@ a fixed sparsity level, while still allowing for some neurons to be active at ea
 time step. \\
 There are several regions of the brain which are thought to work similarly, and in 
 theoretical neuroscience the WTA mechanism is widely used for modelling purposes
-\cite{Marx2015, Carandini2011}. \\
+\cite{Marx2015, Carandini2011}. For this reason, we chose to experiment with WTA 
+sparsity as a biologically motivated approach to enforcing activity constraints 
+in our networks.
+\vspace*{0.5em}
 
 We employ the same experimental setup as in the previous tests: testing on MNIST, maintaining 
 the same architecture and hyperparameters, training for $25$ epochs and repeating each 
