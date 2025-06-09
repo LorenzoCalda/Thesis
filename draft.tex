@@ -48,16 +48,15 @@
 % Write a to-do list on the first page so you can find it easily
 \thispagestyle{empty}
 \noindent
-\textbf{To-Do List:}
-\vspace*{0.5em} \\
-\begin{enumerate}
-    \item {\textcolor{green}{Come up with a title for the thesis}}
-    \item Write acknowledgements
-    \item \textcolor{green}{Provide better description of MLCM in Introduction}
-    \item {\textcolor{green}{Fix introduction of Hopfield Network chapter}}
-    \item \textcolor{green}{Find name of student who authored the other thesis}
-    \item Fix description of experiments in chapter 7
-\end{enumerate}
+% \textbf{To-Do List:}
+% \begin{enumerate}
+%     \item {\textcolor{green}{Come up with a title for the thesis}}
+%     \item Write acknowledgements
+%     \item \textcolor{green}{Provide better description of MLCM in Introduction}
+%     \item {\textcolor{green}{Fix introduction of Hopfield Network chapter}}
+%     \item \textcolor{green}{Find name of student who authored the other thesis}
+%     \item Fix description of experiments in chapter 7
+% \end{enumerate}
 
 
 % Front matter: 4 pages
@@ -68,16 +67,11 @@
 % 3rd: Dedication / Acknowledgements
 \thispagestyle{empty}
 \chapter*{Acknowledgements}
-I also wish to extend a special thank you to my high school professor, Dr. Emanuele Ciancio, 
-whose teaching first sparked my passion for mathematics, a passion that has only grown 
-stronger over the years.
-
 I would first like to thank my father and my mother for their sacrifices and 
 encouragements throughout all the successes and failures of my life. I am forever 
 grateful for their love and unconditional support which has lead me to accomplish far 
-more than I could have ever imagined.\\ 
-I would also like to thank my sister Sofia for the unique ``sisterly'' support she 
-has provided me over the years, I hope to always be a big brother you can be proud of. \\
+more than I could have ever imagined. I would also like to thank my sister Sofia for the unique ``sisterly'' support she 
+has provided me over the years, I hope to always be a big brother you can be proud of. 
 Special thanks to my grandparent: Antonio, Luciana, Ugo and Vittoria, who have always 
 been there for me with love and affection.
 
@@ -88,8 +82,8 @@ I also wish to extend a special thank you to my high school professor, Dr. Emanu
 whose teaching first introduced me to the beauty of mathematics, which I continue to 
 pursue with enthusiasm ever since.
 
-Finally, I am thankful to my friends—Alberto, Alessandro, Ali, Federico, Lorenzo, Luca, 
-Mariano, Sofia, Stefano, Teodoro—and especially to my girlfriend, Chiara, for filling 
+Finally, I am thankful to my friends:Alberto, Alessandro, Ali, Federico, Lorenzo, Luca, 
+Mariano, Sofia, Stefano, Teodoro and especially to my girlfriend, Chiara, for filling 
 this journey with laughter, encouragement, and unwavering support. Their presence 
 has made even the most challenging times manageable and the successes all the more 
 meaningful, and I am deeply grateful to have shared this experience with them.\\
@@ -122,10 +116,10 @@ biological analogues to improve learning and memory. While the field of machine 
 made significant advances, with remarkable achievements in computer vision, natural language 
 processing, and strategic game playing, implementing more biologically plausible models may prove 
 instrumental in solving key issues with today's modern AI architectures.
-\vspace{0.5em}
 
-One significant motivation for such biologically inspired approaches is the stark contrast in energy 
-efficiency between biological and artificial systems. 
+One significant motivation for continuing to study and experiment with biologically-inspired 
+approaches is the stark contrast in energy efficiency between biological and current 
+artificial systems. 
 Following the pioneering work of Kaplan et al. \cite{kaplan2020scalinglawsneurallanguage}, which 
 showed that the performance of large language models scales predictably with the number of parameters, 
 the community has largely pursued ever-larger architectures as the primary path to improved 
@@ -143,20 +137,17 @@ generations of models. \\
 This stands in stark contrast with the brain, whose reported energy consumption grows as 
 $O(N)$ with the number of neurons \cite{10.1371/journal.pone.0017514}; Moreover, under normal 
 conditions a human brain-composed of roughly $9\times10^{10}$ neurons and $10^{14}$ synapses --- 
-operates only on approximately 20 W. \cite{doi:10.1097/00004647-200110000-00001}
-\vspace{0.5em}
+operates only on approximately 20 W\cite{doi:10.1097/00004647-200110000-00001}.
 
-There are multiple factors underlying this efficiency gap, of which two are particularly noteworthy. \\
+There are multiple factors underlying this efficiency gap, of which two are particularly noteworthy: \\
 First, biological learning relies on local update rules, synaptic modifications that depend only 
 on signals available at the level of individual neurons, whereas backpropagation requires global 
-error signals to be propagated through every layer of a network.
-\cite{Xu2024} \\
+error signals to be propagated through every layer of a network\cite{Xu2024}. \\
 Second, the brain employs extreme sparsity both in its connectivity and in neuronal firing: at any 
 given moment only a small fraction of neurons and synapses are active, dramatically reducing energy 
 expenditure. These observations suggest that incorporating local learning mechanisms and sparse 
 event-driven processing into artificial models could yield substantial gains in efficiency without 
 sacrificing performance.
-\vspace{0.5em}
 
 The content of the thesis will be divided into two parts: \\ 
 In Part I, we review the biological foundations of learning and memory, presenting a systematic 
@@ -170,9 +161,9 @@ formulation of MLCMs is then developed, including the dynamics of each layer and
 mechanisms that allow for local, biologically plausible learning. We further discuss 
 the role of binary and sparse activations in enhancing both biological realism and 
 computational efficiency.
-Finally, we present theoretical analyses and extensive empirical results, comparing 
-MLCMs to conventional architectures and conclude by outlining future research 
-directions for biologically inspired machine learning.
+Finally, we present extensive empirical results, comparing MLCMs to conventional 
+architectures and conclude by outlining future research directions for 
+biologically-inspired machine learning.
 
 
 
@@ -191,27 +182,31 @@ directions for biologically inspired machine learning.
 \chapter{Neuron Models and Classical Learning Rules}
 \section{Artificial Neuron Model}
 
-The perceptron model, originally proposed by McCulloch and Pitts in 1943 \cite{McCulloch1943} and later 
-reformulated by Rosenblatt in 1958 \cite{Rosenblatt1958}, abstracts the neuron as a device that receives 
-real-valued inputs $\mathbf{x}\in\mathbb R^N$. Each input $x_i$ is modulated by a synaptic weight 
-$w_i$, and the neuron computes the weighted sum:
+The standard perceptron model, originally proposed by McCulloch and Pitts in 1943 
+\cite{McCulloch1943} and later reformulated by Rosenblatt in 1958 \cite{Rosenblatt1958}, 
+abstracts the neuron as a device that receives real-valued inputs 
+$\mathbf{x}\in\mathbb R^N$. Each input $x_i$ is modulated by a synaptic weight $w_i$, 
+and the neuron computes the weighted sum:
 \[
   s = \sum_{i=1}^N w_i\,x_i = \mathbf{w}\cdot\mathbf{x}.
 \]
-This sum is compared to a threshold $\theta$, yielding a binary output in $\{-1,1\}$ via the sign activation:
+This sum is compared to a threshold $-b$, yielding a binary output in $\{-1,1\}$ via 
+the sign activation:
 \[
   \hat y(\mathbf{x}) = \operatorname{sign}(\mathbf{w}\cdot\mathbf{x} + b).
 \]
-This methods can also be modified to produce an output in $\{0, 1\}$ by using the Heaviside function.
-While mathematically tractable, this model omits many biological details (e.g. temporal dynamics, 
-nonnegative constraints, nonlinear integration), focusing instead on a minimal computational abstraction.
+This methods can also be modified to produce an output in $\{0, 1\}$ by using the 
+Heaviside function.While mathematically tractable, this model omits many biological 
+details (e.g. temporal dynamics, nonnegative constraints, nonlinear integration), 
+focusing instead on a minimal computational abstraction.
 
 \subsection*{The Perceptron as a Classifier}
 Fixing the parameters $(\mathbf{w},b)$, the perceptron implements a function:
 \[
   \hat y:\,\mathbb R^N \to \{ -1,\,1 \},
 \]
-which can be interpreted as a binary classifier. Input data of arbitrary form is vectorized into 
+which can be interpreted as a binary classifier. Input data of arbitrary form is 
+vectorized into 
 $\mathbf{x}\in\mathbb R^N$, and classified by the sign of the affine form.
 
 \subsubsection*{Geometric Interpretation}
@@ -219,74 +214,81 @@ Geometrically, the perceptron defines a hyperplane in $\mathbb R^N$ given by
 \[
     \{\mathbf{x}: \mathbf{w}\cdot\mathbf{x} + b = 0\}
 \]
-which partitions space into two half-spaces corresponding to the two labels. The normal vector 
-$\mathbf{w}$ determines the orientation of the hyperplane, while the bias $b$ controls its offset from 
-the origin. Notably, scaling $(\mathbf{w},b)$ by any positive constant leaves the classification 
-boundary invariant, though the norm of $\mathbf{w}$ can affect learning dynamics.
+which partitions space into two half-spaces corresponding to the two labels. The 
+normal vector $\mathbf{w}$ determines the orientation of the hyperplane, while the 
+bias $b$ controls its offset from the origin. Notably, scaling $(\mathbf{w},b)$ by 
+any positive constant leaves the classification boundary invariant, though the norm 
+of $\mathbf{w}$ can affect learning dynamics.
 
 
 \section{Classical Learning Rules}\label{sec:learning_rules}
 
-Learning rules define how synaptic weights adapt to a task by iteratively adjusting based on observed data.
+Learning rules define how synaptic weights adapt to a task through iterative 
+adjustments based on observed data.
 They can be broadly categorized into two classes:
 \begin{itemize}
-\item \textbf{Local Learning Rules:} In a physical neural system, the update of each synapse depends 
-only on variables accessible locally at that synapse, both in space and time. \cite[Chapter~7]{Baldi2021}
-Local rules are biologically plausible, requiring no global coordination or knowledge of distant 
-network states.
-\item \textbf{Global Learning Rules:} These updates rely on information that may not be available at 
-individual synaptic sites, such as error signals computed from a network-wide objective. They have 
-become the default way to train deep artificial neural networks due to their ability to better 
-propagate the error between layers, though they are less biologically plausible because they depend on 
-nonlocal information.
+\item \textbf{Local Learning Rules:} In a physical neural system, the update of each 
+synapse depends only on variables accessible locally at that synapse, both in space 
+and time\cite[Chapter~7]{Baldi2021}.
+Local rules are biologically plausible, requiring no global coordination or knowledge 
+of distant network states.
+\item \textbf{Global Learning Rules:} These updates rely on information that may not 
+be available at individual synaptic sites, such as error signals computed from a 
+network-wide objective. They have become the default way to train deep artificial 
+neural networks due to their ability to better propagate errors between layers, 
+though they are less biologically plausible because they depend on nonlocal 
+information.
 \end{itemize}
 
 We now quickly review some of the most common local and global learning rules.
 \subsection*{Perceptron Learning Rule}
-For a binary neuron with output $\hat y=\operatorname{sign}(\mathbf{w}\cdot\mathbf{x}+b)$ and target $y\in\{\pm1\}$, the 
-perceptron rule updates only on errors:
+For a binary neuron with output 
+$\hat y=\operatorname{sign}(\mathbf{w}\cdot\mathbf{x}+b)$ and target $y\in\{\pm1\}$, 
+the perceptron rule updates only on errors:
 \[
   \Delta w_i = \eta\,\left(y - \hat y\right)\,x_i
 \]
-where $\eta$ is the learning rate. The update is proportional to the input $x_i$ and the error $\delta$.
-Due to the \emph{Perceptron Convergence Theorem} we can prove that this rule converges 
-in finite steps for linearly separable data.
+where $\eta$ is the learning rate. The update is proportional to the input $x_i$ and 
+the error $\delta$. Through the \emph{Perceptron Convergence Theorem} we can prove 
+that this rule converges in finite steps for linearly separable data.
 
 \subsection*{Hebbian Rule}
-This rule is based on the principle of Hebbian learning, which states that ``cells that fire together, 
-wire together.''
-It captures the correlation between presynaptic and postsynaptic activity:
+This rule is based on the principle of Hebbian learning, which states that 
+``cells that fire together, wire together''. It captures the correlation between 
+presynaptic and postsynaptic activity:
 \[
   \Delta w_i = \eta\,x_i\,y
 \]
-where $x_i$ is presynaptic activity of the i-th neuron and $y$ postsynaptic activity. It captures 
-correlations but can lead to unbounded weight growth.
+where $x_i$ is presynaptic activity of the i-th neuron and $y$ postsynaptic activity. 
+It captures correlations but can lead to unbounded weight growth.
 
 \subsection*{Oja's Rule}
 A normalized Hebbian variant that limits weight magnitude:
 \[
   \Delta w_i = \eta \left(x_i\,y - \frac{y^2}{\lambda}\,w_i\right),\quad \lambda>0
 \]
-with $\lambda$ controlling the weight decay. This rule converges to the first principal component of the
-input data.
+with $\lambda$ controlling the weight decay. This rule converges to the first 
+principal component of the input data.
 
 \subsection*{Delta Rule}
-Also known as the Widrow-Hoff or least-mean-squares rule, for a linear neuron $y=\mathbf{w}\cdot\mathbf{x}$ 
-with target $t$:
+Also known as the Widrow-Hoff or least-mean-squares rule, for a linear neuron 
+$y=\mathbf{w}\cdot\mathbf{x}$ with target $t$:
 \[
   \Delta w_i = \eta\,\left(t - y\right)\,x_i
 \]
-it minimizes the mean squared error between the target and output. This rule is equivalent to gradient 
-descent on on the squared error $\frac12\delta^2$.
+it minimizes the mean squared error between the target and output. This rule is 
+equivalent to gradient descent on on the squared error $\frac12\delta^2$.
 
 \subsection*{Backpropagation}
-A global rule for multi-layer networks. It's the most used learning algorithm in deep learning,
-and it is based on the chain rule of calculus. For weight $w_{ij}^\ell$ in layer $\ell$:
+A global rule for multi-layer networks. It's the most used learning algorithm in deep 
+learning, and it is based on the chain rule of calculus. For weight $w_{ij}^l$ in 
+layer $l$:
 \[
-  \Delta w_{ij}^\ell = \eta\,\delta_j^\ell\,y_i^{\ell-1},\quad \delta_j^\ell = \frac{\partial E}{\partial y_j^\ell}\,\sigma'(y_j^\ell)
+  \Delta w_{ij}^l = \eta\,\delta_j^l\,y_i^{l-1},\quad \delta_j^l = 
+  \frac{\partial E}{\partial y_j^l}\,\sigma'(y_j^l)
 \]
-where $E$ is the error function, $y_i^{\ell-1}$ is the output of the previous layer, and $\sigma$ is the
-activation function.
+where $E$ is the error function, $y_i^{l-1}$ is the output of the previous layer, 
+and $\sigma$ is the activation function.
 By propagating $\delta$ backward, it minimizes a global loss via gradient descent.
 
 
@@ -299,20 +301,20 @@ By propagating $\delta$ backward, it minimizes a global loss via gradient descen
 \chapter{The Hopfield Network}
 Associative memory models constitute a class of Recurrent Neural Networks designed to 
 store and retrieve patterns by means of content-addressable recall. In contrast to 
-feedforward architectures, these models exploit rich feedback connections to compare an 
-input cue with a set of stored prototypes and dynamically converge to the closest match. 
-The principal aim of associative memory is twofold: (i) to robustly recover complete 
-patterns from partial or noisy inputs, and (ii) to continuously incorporate novel 
-experiences without catastrophic interference. \\
+feedforward architectures, these models exploit rich feedback connections to compare 
+an input cue with a set of stored prototypes and dynamically converge to the closest 
+match. The principal aim of associative memory is twofold: (i) to robustly recover 
+complete patterns from partial or noisy inputs, and (ii) to continuously incorporate 
+novel experiences without catastrophic interference. \\
 In this chapter, we provide an overview of one of the most prominent models 
 of associative memory: the Hopfield network. We begin by exploring its theoretical 
 foundations, followed by an analysis of its key properties and inherent limitations.
 
 \section{Framework}
-The Hopfield network is one of the first models of associative memory \cite{Hopfield1982, Hopfield1984}, it's a recurrent neural network of binary states which is capable of
-storing a set of patterns by encoding them into the weights through the use of the Hebb 
-rule.
-\vspace*{0.5em}
+The Hopfield network is one of the first models of associative memory 
+\cite{Hopfield1982, Hopfield1984}, it's a recurrent neural network of binary states 
+which is capable of storing a set of patterns by encoding them into the weights 
+through the use of the Hebb rule.
 
 Mathematically, it is defined by a set of \(N\) binary neurons whose states at time 
 \(t\) are denoted:
@@ -321,17 +323,17 @@ s_i(t) \;\in\; \{ -1,\,+1\},
 \qquad i = 1, \dots, N.
 \]
 Each unordered pair of neurons \((i,j)\) is connected by symmetric weights 
-\(J_{ij} = J_{ji}\), and we enforce \(J_{ii}=0\) for all \(i\).  A canonical choice of 
-the synaptic matrix is given by the Hebbian learning rule:
+\(J_{ij} = J_{ji}\), and we enforce \(J_{ii}=0, \hspace{8pt} \forall i\). A canonical 
+choice of the synaptic matrix is given by the Hebbian learning rule:
 \begin{equation}
 J_{ij}
 \;=\;
 \frac{1}{N} \sum_{\mu=1}^{p} \xi_i^{\mu}\,\xi_j^{\mu}, \qquad i \neq j
 \end{equation}
-where \(\{\xi^{\mu}\}_{\mu=1}^P\) are the \(P\) prototype patterns to be stored (each 
-\(\xi_i^\mu\in\{-1,+1\}\)). As we will see later, this prescription guarantees that each 
-stored pattern is (in the limit of low loading \(p/N\)) a stable fixed point of the 
-network dynamics.
+where \(\{\xi^{\mu}\}_{\mu=1}^P\) are the \(P\) prototype patterns to be stored 
+(each \(\xi_i^\mu\in\{-1,+1\}\)). As we will see later, this prescription guarantees 
+that each stored pattern is a stable fixed point of the network 
+dynamics\footnote{in the limit of low loading \(p/N\)}.
 
 Updates are performed asynchronously: at each time step one neuron \(i\) is selected 
 at random and its state is updated according via the rule:
@@ -348,111 +350,110 @@ E(\mathbf{s}\left(t\right))
 \end{equation}
 which can be easily shown to monotonically decreases (or remains constant) with each 
 asynchronous update.
-\vspace*{0.5em}
 
 \subsection*{Biological inconsistencies}
-One of the strengths of the Hopfield model is that it's simple enough to be analytically
-tractable. However this simplification of also gives rise to some notable biological 
-inconsistencies \cite{Hertz2018}:
+One of the strengths of the Hopfield model is that it's simple enough to be 
+analytically tractable. However this simplification of also gives rise to some 
+notable biological inconsistencies \cite{Hertz2018}:
 \begin{enumerate}
-  \item\emph{Symmetric interaction:}  The symmetric interaction between states is a very 
-  unrealistic assumption due to Dale's Rule, which states that neurons can either have 
-  a purely excitatory or inhibitory role. This however was judged a necessary sacrifice
-  by Hopfield as it allows us to treat the network as an Ising model with a well defined
-  energy function.
-  \item \emph{Spurious potentiation during joint silence:}  The current formulation 
-  of the weights erroneously strengthens synapses even when neither neuron is active, 
-  a phenomenon not supported by experimental neurophysiology.
-  \item \emph{Excitatory-inhibitory synaptic flips:}  As more patterns are 
-  stored (\(p\) increases), a synapse that was initially excitatory has the potential of
-  becoming inhibitory, once again due to Dale's law this is not a realistic phenomenon.
+    \item\emph{Symmetric interaction:}  The symmetric interaction between states is a 
+    very unrealistic assumption due to Dale's Rule, which states that neurons can 
+    either have a purely excitatory or inhibitory role. However, it was judged a 
+    necessary sacrifice by Hopfield as it allows us to treat the network as an 
+    Ising model with a well defined energy function.
+    \item \emph{Spurious potentiation during joint silence:}  The current formulation 
+    of the weights erroneously strengthens synapses even when neither neuron is active, 
+    a phenomenon not supported by experimental neurophysiology.
+    \item \emph{Excitatory-inhibitory synaptic flips:}  As more patterns are 
+    stored (\(p\) increases), a synapse that was initially excitatory has the 
+    potential of becoming inhibitory, once again due to Dale's law this is not a 
+    realistic phenomenon.
 \end{enumerate}
 
 \section{Attractor states}
-The main property of the Hopfield Network is its ability to store and retrieve patterns.
-In practice this happens because the Hebb rule ensures that the stored patterns are not
-only fixed points of the dynamics, but also function as attractors; meaning that 
-initializing the network with a states that is close in hamming distance to one of the
-stored patterns will cause the Hopfield network to converge towards that pattern.
-\vspace{0.5em}
+The main property of the Hopfield Network is its ability to store and retrieve 
+patterns. In practice this happens because the Hebb rule ensures that the stored 
+patterns are not only fixed points of the dynamics, but also function as attractors; 
+meaning that initializing the network with a states that is close in hamming 
+distance to one of the stored patterns will cause the Hopfield network to converge 
+towards that pattern.
 
-Although true in the general case (up to certain capacity constraints that we will explore
-later), let's exam the stability claim of a particular stored pattern $\xi^\nu$ in the case of 
-P randomly drawn i.i.d. patterns $\{\xi^{\mu}\}_{\mu=1}^P$ and $N \to \infty$. 
+Although true also in the general case (up to certain capacity constraints that we 
+will explore later), let's examine the stability claim of a particular stored pattern 
+$\xi^\nu$ in the case of P randomly drawn i.i.d. patterns $\{\xi^{\mu}\}_{\mu=1}^P$ 
+and $N \to \infty$. \\
 Being a fixed point corresponds to:
 \begin{equation}
   \xi^\nu_i = \operatorname{sign}\left( \sum_{j}J_{ij}\xi^\nu_j \right) = 
   \operatorname{sign}\left( \frac{1}{N} \sum_{j,\, \mu} \xi_i^{\mu}\,\xi_j^{\mu}\,\xi^\nu_j \right)
    \quad \forall i.
 \end{equation}
-But we can separate the contribution of $\nu$ from the rest of the patterns:
+Separating the contribution of $\nu$ from the rest of the patterns:
 \begin{equation}
   \xi^\nu_i = \operatorname{sign}\left(\xi_i^{\nu} + 
   \frac{1}{N} \sum_{j, \,\mu\neq\nu} \xi_i^{\mu}\,\xi_j^{\mu}\, \xi^\nu_j \right)
 \end{equation}
-But we can see that $X_j := \xi^\mu_j\sum_{\mu\neq\nu}^{P}\xi^\mu_i \xi^\mu_j$ is a random
-variable with: $\mathbb{E}[X_j] = 0$ and $V(X_j) = {P-1}$. Thus we can apply the
-central limit theorem to get:
+But we can see that $X_j := \xi^\mu_j\sum_{\mu\neq\nu}^{P}\xi^\mu_i \xi^\mu_j$ is a 
+random variable with: $\mathbb{E}[X_j] = 0$ and $V(X_j) = {P-1}$. Thus we can apply 
+the central limit theorem to get:
 \begin{equation}
 \frac{1}{N} \sum_{j, \,\mu\neq\nu} \xi_i^{\mu}\,\xi_j^{\mu}\, \xi^\nu_j = 
 \frac{1}{N} \sum_{j}X_j \sim N\left(0, \frac{P-1}{N}\right)
 \end{equation}
 We conclude that, in the thermodynamic limit $N \to \infty$, the noise term becomes 
-negligible and thus we verify with probability one that the pattern is indeed a fixed point.
-\vspace{0.5em}
+negligible and thus we verify with probability one that the pattern is indeed a fixed 
+point.
 
-Physically, the stable configurations of the network dynamics correspond to local minima 
-of the energy function defined in \eqref{eq:energy}.  Geometrically, one may view the 
-energy as a real-valued surface over the \(2^N\) vertices of an \(N\)-dimensional 
-hypercube, each vertex representing a possible network state 
-\(\mathbf{s}\in\{-1,+1\}^N\).  Under the asynchronous update rule, each individual spin 
-flip can only decrease or leave unchanged the network's energy \cite{Hertz2018}.  
+The stable configurations of the network dynamics correspond to local minima of the 
+energy function defined in \eqref{eq:energy}. Geometrically, one may view the energy 
+as a real-valued surface over the \(2^N\) vertices of an \(N\)-dimensional hypercube, 
+each vertex representing a possible network state \(\mathbf{s}\in\{-1,+1\}^N\). 
+Under the asynchronous update rule, each individual spin flip can only decrease or 
+leave unchanged the network's energy \cite{Hertz2018}. \\
 Analogously to a ball rolling downhill on a rugged landscape and settling in the nearest 
 valley, the network, starting from any initial vertex, successively moves (or remains) 
-to neighboring vertices of decreasing energy until it becomes trapped in a local minimum 
-of the energy surface. 
-\vspace*{0.5em}
+to neighboring vertices of decreasing energy until it becomes trapped in a local 
+minimum of the energy surface. 
 
 \subsection*{Spurious states}
-It has been observed that, in addition to the $P$ desired patterns, the Hopfield network
-admits 3 other types of attractors arising from the Hebbian connectivity.  
-These unwanted minima can trap the dynamics and degrade retrieval performance.
+It has been observed that, in addition to the $P$ desired patterns, the Hopfield 
+network admits 3 other types of attractors arising from the Hebbian connectivity.
 
 \begin{enumerate}
   \item \emph{Complementary Patterns:}  
-    Trivially, each stored pattern \(\xi^\mu\) has its exact negation \(-\xi^\mu\) as an 
-    attractor, since the energy function \eqref{eq:energy} is invariant under 
-    \(\mathbf{s}\mapsto -\mathbf{s}\).  These complements are generally of little 
-    concern, since they lie at the same energy level as the intended memories and can 
-    be distinguished by an overall sign flip.
+    Trivially, each stored pattern \(\xi^\mu\) has its exact negation \(-\xi^\mu\) as 
+    an attractor, since the energy function \eqref{eq:energy} is invariant under the 
+    transformation \(\mathbf{s}\mapsto -\mathbf{s}\).  These complements are generally 
+    of little concern, since they lie at the same energy level as the intended 
+    memories and can be distinguished by an overall sign flip.
 
-  \item \emph{Mixture States:}\cite{PhysRevA.32.1007}
+  \item \emph{Mixture States:}
     Linear combinations of an odd number of stored patterns can themselves form fixed 
-    points. For example, given three patterns \(\xi^1,\xi^2,\xi^3\), one can construct:
+    points\cite{PhysRevA.32.1007}. For example, given three patterns 
+    \(\xi^1,\xi^2,\xi^3\), one can construct:
     \[
       \xi_i^{\rm mix} \;=\; \mathrm{sgn}\bigl(\xi_i^1 \pm \xi_i^2 \pm \xi_i^3\bigr)\,,
     \] 
     These mixture states lie at intermediate Hamming distance from each 
-    constituent pattern and satisfy the fixed'point stability conditions for small to 
-    moderate loading.
+    constituent pattern and satisfy the fixed point's stability conditions for 
+    moderate loadings.
 
-  \item \emph{Spin-Glass States:}\cite{PhysRevLett.55.1530}
+  \item \emph{Spin-Glass States:}
     When the number of stored patterns \(p\) becomes large, the random superposition of 
     many weakly correlated patterns creates a highly rugged energy landscape populated 
-    by {\em spin-glass} minima.  These states bear no significant overlap with any 
-    single stored pattern and arise purely from interference among many stored memories.
+    by {\em spin-glass} minima\cite{PhysRevLett.55.1530}. These states bear no 
+    significant overlap with any single stored pattern and arise purely from 
+    interference among many stored memories.
 \end{enumerate}
-\vspace*{0.5em}
 
-The second and third type are called \emph{spurious states} and --- even though they 
-usually have small basins of attractions compared to the retrieval states --- they tend 
+The second and third type are called \emph{spurious states} and, even though they 
+usually have small basins of attractions compared to the retrieval states, they tend 
 to be problematic and degrade retrieval performance.
-\vspace{0.5em}
 
-To mitigate these effects, researchers have introduced stochasticity into the update rule, 
-effectively turning the network into a finite temperature Ising model.  
-This system can escape shallow local minima and more thoroughly explore the state space, 
-thereby reducing the prevalence of spurious states.
+To mitigate these effects, researchers have introduced stochasticity into the update 
+rule, effectively turning the network into a finite temperature Ising model.  
+This system can escape shallow local minima and more thoroughly explore the state 
+space, thereby reducing the prevalence of spurious states.
 
 The seminal work carried by Little, Peretto, Hinton and others 
 \cite{LITTLE1974101, Hinton1983, Peretto1984} implement this idea by replacing the 
@@ -460,8 +461,8 @@ deterministic sign update with a probabilistic rule:
 \[
 P\bigl(S_i(t+1) = \pm1\bigr)
 \;=\;
-\frac{\exp\bigl(\pm \beta\,h_i\bigr)}
-     {\exp\bigl(\beta\,h_i\bigr) + \exp\bigl(-\beta\,h_i\bigr)},
+\frac{\exp\bigl(\pm \beta\,h_i(t)\bigr)}
+     {\exp\bigl(\beta\,h_i(t)\bigr) + \exp\bigl(-\beta\,h_i(t)\bigr)},
 \]
 where:
 \[
@@ -472,14 +473,14 @@ In the long-time limit, the network converges to the Boltzmann distribution:
 \[
 P(S_1,\dots,S_N)
 \;=\;
-\frac{1}{Z}\,\exp\!\bigl(-\beta\,E(S)\bigr),
+\frac{1}{Z}\,\exp\bigl(-\beta\,E(S)\bigr),
 \]
 with energy \ref{eq:energy} and partition function \(Z\).
 
 \section{Capacity considerationss}
-In the thermodynamic limit \(N\to\infty\), two complementary notions of capacity arise:  
-one concerning exact, error-free recall (sublinear regime) and one concerning extensive 
-recall (linear regime).  
+In the thermodynamic limit \(N\to\infty\), two complementary notions of capacity 
+arise:  one concerning exact, error-free recall (sublinear regime) and one concerning 
+extensive recall (linear regime).  
 
 \subsection*{1.\ Perfect Recall: sublinear pattern storage}
 
@@ -488,7 +489,7 @@ errors grows only sublinearly, with the well-known bound \cite{Hertz2018}:
 \begin{equation}
   P_{\max}\;=\;\frac{N}{2\,\log_2 N}\,,
 \end{equation}
-which follows from combinatorial and information-theoretic arguments.  
+Which is determined from combinatorial and information-theoretic arguments.  
 Indeed if \(P\) grows faster than \(O(N/\log N)\), then exact retrieval fails almost 
 surely.  Thus, in the zero-error regime one must restrict \(P\ll N\) to guarantee that 
 all stored patterns are stable attractors.
@@ -501,7 +502,7 @@ a critical loading:
 \begin{equation}\label{eq:alpha_c}
   \alpha_c \;\approx\; 0.138 \, ,
 \end{equation}
-above which pattern retrieval catastrophically breaks down.  
+Above which pattern retrieval catastrophically breaks down.  
 Amit, Gutfreund and Sompolinsky \cite{PhysRevLett.55.1530, PhysRevA.35.2293, Amit1989} 
 first derived \(\alpha_c\) via replica-symmetric mean-field theory, 
 identifying it as the boundary between the retrieval and spin-glass phases at zero 
@@ -518,29 +519,30 @@ Experimental and numerical studies corroborate these findings as well.
 \chapter{Random Recurrent Neural Networks}\label{sec:random_rnn}
 
 Particular effort has been devoted by researchers to study Hopfield-type models that 
-allow for random and asymmetric synaptic connections \cite{Sompolinsky1988, Crisanti1987, 
-Derrida1987, Xu1996}. 
+allow for random and asymmetric synaptic connections \cite{Sompolinsky1988, 
+Crisanti1987, Derrida1987, Xu1996}. 
 This interest stems not only from a desire of greater biological plausibility, but 
 also from results claiming that the inclusion of asymmetric part to the Hopfield 
 model can lead to a reduction in the number of spurious states while largely 
 preserving the retrieval capacity of the network 
 \cite{Parisi_1986, Hertz1986, Chengxiang2000}.\\
-These approaches usually focus on perturbing the hebbian weights obtained in the classic 
-Hopfield framework. This is accomplished either through random dilution the network (setting some 
-weights to zero) or by the direct inclusion random noise to the weights. Thus while the 
-network is made more robust through the inclusion of noise, the core idea of Hebbian 
-connectivity is maintaned. 
+These approaches usually focus on perturbing the hebbian weights obtained in the 
+classic Hopfield framework. This is accomplished either through random dilution the 
+network (ie. setting some weights to zero) or by the direct inclusion random noise to 
+the weights. Thus while the network is made more robust through the inclusion of noise, 
+the core idea of Hebbian connectivity is maintaned. 
 
 However, despite these encouraging results, all of the above asymmetric-weight schemes 
 remain fundamentally tethered to the Hopfield paradigm: the underlying dynamics and 
 Hebbian backbone are unchanged, and the random or diluted terms enter only as small 
-perturbations.  Consequently, they inherit the same physiological inconsistencies as 
+perturbations. Consequently, they inherit the same physiological inconsistencies as 
 the original model, such as joint-silence potentiation, since the core conceptual 
-framework is still that of the Hopfield network. \\
+framework is still that of the Hopfield network.
 
-Recent works\cite{Scardecchia2023,Student2024} have abandoned the Hopfield ansatz altogether and examined 
-{\em purely random} associative networks, in which each synaptic weight 
-\(J_{ij}\) is drawn independently from a prescribed distribution (e.g.\ Gaussian). \\
+Recent works\cite{Scardecchia2023,Student2024} have abandoned the Hopfield ansatz 
+altogether and examined {\em purely random} associative networks, in which each s
+ynaptic weight \(J_{ij}\) is drawn independently from a prescribed distribution 
+(e.g.\ Gaussian). \\
 However, purely random associative networks also present serious limitations, chief 
 among them the lack of any guaranteed convergence mechanism.  In the absence of 
 symmetric couplings or a well-defined energy function, their update dynamics can 
@@ -554,8 +556,8 @@ convergence to fixed-point attractors.
 
 We first investigate the role of self-couplings in the dynamics of random networks.
 Previous works have shown that the inclusion of self-couplings in a neuron as a 
-method to prevent excessive oscillations has shown promising stabilizing effects.
-\cite{Student2024} \\
+method to prevent excessive oscillations has shown promising stabilizing effects 
+\cite{Student2024}. \\
 Mathematically, we model the self-coupling term $J_D$ as a weight from neuron $i$ to 
 itself. Thus the updated dynamics for this type of network become:
 
@@ -565,7 +567,6 @@ itself. Thus the updated dynamics for this type of network become:
 
 In this case the value of $J_D$ is set to be positive and is taken to be the same for 
 all neurons.
-\vspace{0.5em}
 
 It's clear to see that the self-coupling term acts as a stabilizing force, as it works
 to oppose changes in the state of the neuron.\\
@@ -574,29 +575,29 @@ completely the other terms of the dynamics and each configuration becomes a fixe
 of the network.\\
 The self-coupling term is thus a double-edged sword: it can be used to
 successfully stabilize the network and induce convergences, but if used excessively 
-it can lead to a trivial model. \\
-The objective then becomes to find reasonable values of $J_D$ that allow for a non-trivial
-but stable dynamic. To this end we introduce the concept of \emph{critical self-coupling} 
-$J^*_D$, which we define to be the infimum of the values of $J_D$ such that the network 
-is able to fully converge for any combination of weights and states.
-\vspace{0.5em}
+it can lead to trivial dynamics. \\
+The objective then becomes to find reasonable values of $J_D$ that allow for 
+non-trivial but stable dynamic. To this end we introduce the concept of 
+\emph{critical self-coupling} $J^*_D$, which we define to be the infimum of the 
+values of $J_D$ such that the network is able to fully converge for any combination 
+of weights and states.
 
-Earlier works have taken both theoretical approaches \cite{Scardecchia2023}, showing through stastical 
-physics methods that the logarithm of the (normalized) number of fixed points of the 
-network as a function of $J_D$ has form:
+Earlier works have taken both theoretical approaches \cite{Scardecchia2023}, showing 
+through stastical physics methods that the logarithm of the (normalized) number of 
+fixed points of the network as a function of $J_D$ has form:
 \begin{equation}
   \log\left[ 1 + \operatorname{erf}\left( \frac{J_D}{\sqrt{2}} \right) \right],
   \quad \text{when}  \hspace{0.5em} \beta \to \infty  \hspace{0.5em} \text{and}  
   \hspace{0.5em} N \to \infty; 
 \end{equation}
-as well as a numerical approaches \cite{Student2024}, where the focus was on implementing 
-simulations of the network dynamics to measure the number of fixed points for different
-values of $J_D$ and different network sizes. \\
+as well as a numerical approaches \cite{Student2024}, where the focus was on 
+implementing simulations of the network dynamics to measure the number of fixed 
+points for different values of $J_D$ and different network sizes. \\
 Our contribution to this line of work has been to massively scale up the numerical 
 experiments by developing a highly optimized C implementation of the model, allowing us
-to expand from networks of 8,000 neurons in prior studies to over 100,000 neurons and 
-enabling robust measurement of \(J_D^*\) across large variations in system size.
-\vspace{0.5em}
+to expand from the networks of 8,000 neurons found in previous studies to over 100,000 
+neurons; enabling for robust measurement of \(J_D^*\) across large variations in system 
+size.
 
 We present two main results: the first is the behaviour of the critical self-coupling
 as a function of the network size, and the second is the convergence time
@@ -615,7 +616,6 @@ We implement a fully-connected network of size \(N\) with:
 The update rule is given by \eqref{eq:Self_coupling_update} and we perform synchronous 
 updates, as it provides greater computational efficiency without altering the behaviour 
 of the network.
-\vspace*{0.5em}
 
 The estimation of the $J^*_D$ is done by randomly drawing the weights for a network of
 size $N$ and then sampling various initial states to verify their convergence for a given
@@ -643,7 +643,6 @@ We report the results of our numerical experiments in figure
 $J^*_D$ on the y-axis and the network size $N$ on the x-axis in log scale. \\
 Additionally, we also plot an interpolation of the data to surmise a functional form
 for the behaviour of $J^*_D$.
-\vspace*{0.5em}
 
 What is immediately noticeable is that the critical self-coupling $J^*_D$ increases 
 with the network size $N$. However this growth does not appear to be linear even in 
@@ -662,8 +661,8 @@ further work is needed to establish a more precise relationship.
 \end{figure}
 
 Figure~\ref{fig:average_convergence_time_vs_JD} shows the number of asynchronous update iterations required 
-for full convergence as a function of the self-coupling \(J_D\), with each colour 
-indicating a different network size \(N\). \\
+for full convergence as a function of the self-coupling \(J_D\), each colour 
+indicating a different network size. \\
 As a confirmation of our previous results, we see that larger networks only start 
 converging for larger values of \(J_D\). Indeed we notice a progressive shift to the 
 right of the curves as \(N\) increases. \\
@@ -678,7 +677,7 @@ changes in the self-coupling $J_D$ do not contribute to changing the sign in
 Indeed, as \(N\) increases, the width of each plateau in \(J_D\)-space shrinks, 
 reflecting a greater sensitivity to small changes of $J_D$. Beyond roughly 
 \(N=25{,}600\), the step structure becomes imperceptible and the convergence time 
-\(T_c(J_D)\) is seemingly well described by a power law,
+\(T_c(J_D)\) is seemingly well described by a power law:
 \[
   T_c(J_D)\;\propto\;(J_D - J_D^*)^{-\gamma},
 \]
@@ -711,13 +710,12 @@ We implement a network of size \(N\) with:
 \begin{itemize}
   \item Binary states \(s_i(t) \in \{-1,+1\}\)
   \item Random i.i.d weights 
-  $J_{ij} \sim N(0,\frac{1}{\sqrt(N)}) \hspace{1em} \forall i \neq j, \hspace{1em} J_{ii} = 0 \hspace{1em} \forall i$
+  $J_{ij} \sim N(0,\frac{1}{ \sqrt N}) \hspace{1em} \forall i \neq j, \hspace{1em} J_{ii} = 0 \hspace{1em} \forall i$
   \item Sparse reinforcement matrix $A$ s.t. $A_{ij} = a > 0$ non-zero for entries of 
   order $O\left(N^d\right)$ with $d \in \left(1, 2\right)$.
 \end{itemize}
 The update rule is given by \eqref{eq:reinforcement_update} and we once again perform 
 synchronous updates.
-\vspace*{0.5em}
 
 We generate the reinforcement matrix \(A\) by first fixing the strenght $a$ and an order
 for the density $O\left(N^d\right)$ and then randomly selecting a density 
@@ -780,15 +778,13 @@ The width of the intermediate (green/blue) band shrinks with
 increasing \(N\). Thus, although sparse positive reinforcement can 
 reliably induce convergence, the ``parameter margin'' for nontrivial 
 dynamics becomes more stringent in very large systems.
-\vspace*{0.5em}
 
 Another interesting remark is that the lower boundary of the 
 chaotic region, the minimal exponent \(d_{\min}(N)\) beyond which 
-convergence becomes possible, decreases as \(N\) grows. 
+convergence becomes possible decreases as \(N\) grows. 
 In other words, larger networks allow for stable dynamics even in 
 progressively sparser reinforcement (\(d\)) regimes, suggesting a scaling 
 law \(d_{\min}(N)\to d_\infty<2\) that merits analytic characterization.
-\vspace{0.5em}
 
 Overall, these heatmaps demonstrate that sparse positive reinforcement 
 can stabilize large random networks, but only within a narrowing 
@@ -836,7 +832,6 @@ was developed with a strong emphasis on the computational capabilities of biolog
 neural microcircuits within the brain \cite{Maass2002, Maass2004, Maass2011}.\\
 The primary motivation behind LSMs was to create biologically relevant learning models 
 using spiking neural networks (SNNs) with recurrent connectivity.
-\vspace{0.5em}
 
 The computational framework of an LSM is similar to the general RC architecture, 
 consisting of a reservoir (usually known as the Liquid) and a readout layer. In LSMs, 
@@ -881,7 +876,6 @@ emerged independently of Liquid State Machines (LSMs) around the same time. Whil
 ESNs and LSMs share the core principles of using a fixed RNN as a 
 reservoir and training only a readout layer, they differ in their specific reservoir 
 implementation.
-\vspace{0.5em}
 
 In contrast to the spiking neural networks typically used in LSMs which operate in 
 continuous time and use spike sequences as inputs, ESNs employ reservoirs 
@@ -918,17 +912,17 @@ Before describing the multi-layer chain architecture, we first provide a brief o
 results crucial to the development of the model.
 
 \subsubsection*{Extension of Perceptron capacity}
-The capacity of the perceptron has been extensively studied, with the seminal work by 
+The capacity of the perceptron has been extensively studied, with the seminal work of 
 Cover \cite{Cover1965} establishing the conditions under which a perceptron can 
 separate data.\\
 In this context the measure of complexity is taken to be the maximum number of 
 patterns which can be classified correctly by a perceptron. Through the use of 
 Cover's Counting Theorem, it can be shown that for a perceptron with $N$ inputs, the 
-probability of being able to separate $P$\footnote{
+probability of being able to separate $P$ with randomly assigned labels is given 
+by\footnote{
     \setstretch{1}It's worth remarking that we must also assume the $P$ points to be in general position, meaning that
 no subset of size less than N is linearly dependent. In practice this is a very mild condition and 
-almost never happens.\vspace{-0.25em}
-} with randomly assigned labels is given by:
+almost never happens.}:
 \begin{equation}
   \mathbb{P}\left(\{ \left(\mathbf{x}_1, y_1 \right), \text{...}, 
   \left(\mathbf{x}_P, y_P \right)\} \hspace{5pt} \text{linearly separable}\right) \;=\; 
@@ -936,7 +930,6 @@ almost never happens.\vspace{-0.25em}
 \end{equation}
 In the large $N$ limit, this probability approaches 1 when $P < 2N$ and approaches 0 when 
 $P > 2N$. We thus conclude the capacity of the perceptron to be $2N$.
-\vspace{0.5em}
 
 Surprisingly, empirical observations \cite{Student2024} have shown that passing the data through a 
 Random RNN (properly constructed so as to make the dynamics stable and non-trivial) as a 
@@ -965,12 +958,13 @@ Borrowing a term from statistical physics, we call a ``ferromagnetic'' interacti
 interaction between neurons which encourages them to have the same sign of activity. 
 In this case, the self-coupling can be seen as a ferromagnetic connection in time between a neuron at 
 time $t$ and itself at time $t-1$. \\
-The positive effect that ferromagnetic coupling have on the dynamics of a random RNN is not only 
-restricted to temporal connections, but can also be extended to spatial connections. Indeed research 
-indicates that having multiple RNNs connected in parallel, with each neuron in each RNN not only 
-being fully connected to all the other neurons in the same RNN but also being connected to other 
-neurons with the same index in other RNNs, leads to a stabilization of the dynamics comparable to
-that of the self-coupling term.
+The positive effect that ferromagnetic coupling have on the dynamics is 
+not only restricted to temporal connections, but can also be extended to spatial 
+connections. Indeed research indicates that having multiple RNNs connected in 
+parallel, with each neuron in each RNN not only being fully connected to all the 
+other neurons in the same RNN but also being connected to other neurons with the same 
+index in other RNNs, leads to a stabilization of the dynamics comparable to that of 
+the self-coupling term.
 
 \section{Overview of Multi-Layer Chain Architecture}
 Following the above remarks, we can construct a multi-layered architecture composed of 
@@ -991,6 +985,7 @@ During inference, the input data is passed to the first layer as an external inp
 a specified strength, then the dynamics of all the networks are made to run until 
 convergence. The fixed point of the final layer is taken to be the internal 
 representation of the data, which is then passed to the classifier head for the prediction.
+\\
 
 \begin{figure}[h!] 
     \centering
@@ -1007,7 +1002,6 @@ In the last chapter we introduced the general architecture behind MLCMs, we now
 proceed with providing a more formal definition of the model and its components. \\
 Let's consider the simple case in which an input of size $N$ is passed through $L$ layers
 of RNNs, each of size $N$, and then through a classifier head of size $M$.
-\vspace{0.5em}
 
 The model is composed of:
 \begin{itemize}
@@ -1017,13 +1011,13 @@ The model is composed of:
     each RNN:  
     $\{ J^l \hspace{2pt} | \hspace{2pt} J^l \in \mathbb{R}^{N \times N}\}_{l=1}^{L}$
     \item \emph{Self Couplings:} A set of self-coupling weights:
-    $\{ J_D \hspace{2pt} | \hspace{2pt} J_D \in \mathbb{R}\}_{l=1}^{L}$
+    $\{ J_D^l \hspace{2pt} | \hspace{2pt} J_D^l \in \mathbb{R}_+\}_{l=1}^{L}$
     \item \emph{Left Ferromagnetic Couplings:} A set of ferromagnetic connections 
     connecting the previous layer $l-1$ to the current layer $l$: $ \{ \lambda_{\mathrm{L}}^l 
-    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{L}}^1 \in \mathbb{R}\}_{l=2}^L$
+    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{L}}^1 \in \mathbb{R}_+\}_{l=2}^L$
     \item \emph{Right Ferromagnetic Couplings:} A set of ferromagnetic connections
     connecting the next layer $l+1$ to the current layer $l$: $\{ \lambda_{\mathrm{R}}^l
-    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{R}}^L \in \mathbb{R}\}_{l=1}^{L-1}$
+    \hspace{2pt} | \hspace{2pt} \lambda_{\mathrm{R}}^L \in \mathbb{R}_+\}_{l=1}^{L-1}$
     \item \emph{Input Coupling:} A value determining the strength that the input data
     applies to the first layer in the form of an external field: $\lambda_{\mathrm{IN}} 
     \in \mathbb{R}$
@@ -1051,13 +1045,13 @@ following dynamics:
     s_i^l(t+1) = 
     \begin{cases}
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
         \right) & \text{if } l = 1 \\[2ex]
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)
         \right) & \text{if } 1 < l < L \\[2ex]
         \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + \lambda_{\mathrm{OUT}} 
         \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k\right) & \text{if } l = L
     \end{cases}
     \label{eq:si_update}
@@ -1077,7 +1071,6 @@ parameters either affect the stability of the dynamics or the flow of informatio
 upon which learning is based on for the other hyperparameters. They are best thought 
 of as intrinsic properties of the network and, while it is possible to have them vary 
 in time, they are usually treated as constant hyperparameters.
-\vspace{0.5em}
 
 At each iteration, the training protocol is divided in two steps: 
 \begin{enumerate}
@@ -1119,7 +1112,6 @@ update the states:
 \end{itemize}
 In practice, the last two methods are the most commonly used because they parallelize 
 the computations through matrix multiplication and are thus much faster.
-\vspace{0.5em}
 
 Usually at each iteration of training, the hidden layer states are initialized to a 
 fixed initial state. This is done both to reduce the level of noise in the network as
@@ -1148,8 +1140,7 @@ rule to update the weights $J_{ij}^l$ with learning rate $\eta > 0$ as follows:
 \end{equation}
 Unlike equation \ref{eq:si_update}, this update rule actively ignores the contributions
 from both itself and $\left(\mathbf{s}^{l+1}_{\infty}\right)_i$ precisely becauuse we 
-want we want the model at inference to only depend on the influence of the input. 
-\vspace{0.5em}
+want we want the model at inference to only depend on the influence of the input.
 
 The output weights $W^{\mathrm{fwd}}$ are more straightforward to train, they can 
 either be trained through the perceptron learning rule or using cross-entropy loss. 
@@ -1235,7 +1226,6 @@ for the entire training duration of 20 epochs.
 To contextualize the results, we compare the accuracy of the MLCM-based classifier 
 to that of a simple single-layer perceptron trained directly on the raw input vectors, 
 using the same number of training epochs and analogous learning rules.
-\vspace{0.5em}
 
 This experimental setup allows us to assess whether MLCMs can successfully learn 
 meaningful internal representations on a standard machine learning benchmark, and 
@@ -1325,7 +1315,6 @@ The output $\mathbf{y}$ is not transformed from $\{-1, 1\}$ to $\{0, 1\}$, while
 the input $\mathbf{x}$ is, thus $\kappa_i^L$ does not include a 
 $\lambda_{\mathrm{OUT}}\sum_{k=1}^{M} W_{ik}^{\mathrm{back}}$ that would at first glance
 be expected.
-\vspace*{0.5em}
 
 Switching from $z_i^l(t)$ back to $s_i^l(t)$, the dynamics of the MLCM in $\{0, 1\}$ 
 case are expressed in the as:
@@ -1333,15 +1322,15 @@ case are expressed in the as:
     s_i^l(t+1) = 
     \begin{cases}
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l \, 
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{IN}}\, x_i + \lambda_{\mathrm{R}}^l \, 
         s_i^{l+1}(t) - \kappa_i^l - \boldsymbol{\gamma}
         \right) & \text{if } l = 1 \\[2ex]
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + 
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) + 
         \lambda_{\mathrm{R}}^l\, s_i^{l+1}(t)  - \kappa_i^l - \boldsymbol{\gamma}
         \right) & \text{if } 1 < l < L \\[2ex]
         \boldsymbol{\theta}\left(\displaystyle\sum_{j \neq i} J_{ij}^l s_j^l(t) + 
-        J_D\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) +
+        J_D^l\, s_i^l(t) + \lambda_{\mathrm{L}}^l\, s_i^{l-1}(t) +
         \frac{\lambda_{\mathrm{OUT}}}{2} \sum_{k=1}^{M} W_{ik}^{\mathrm{back}} y_k  - 
         \kappa_i^l - \boldsymbol{\gamma}\right) 
         & \text{if } l = L
@@ -1350,7 +1339,6 @@ case are expressed in the as:
 \end{equation}
 Where the extra term included, $\boldsymbol{\gamma}$, is a threshold function 
 that regulates the activation of the states.
-\vspace*{0.5em}
 
 This change is not only attractive for the above reason, but also because through the 
 inclusion of an inactive state we can work to enforce sparsity on the network. Human 
@@ -1360,7 +1348,6 @@ information processing and sparse representations have been hypothesized to be k
 encoding high-level features and concepts in the brain \cite{JAASKELAINEN2022119633}.\\
 Sparsity also has practical benefits in terms of computational efficiency, as it 
 reduces the number of non-trivial computations required to run the dynamics.
-\vspace*{0.5em}
 
 In mathematical terms, we say that layer $l$ is has a sparsity of $\delta^l$ at time 
 $t$ if: 
@@ -1368,7 +1355,6 @@ $$\frac{1}{N} \sum_{i=0}^{N} s_i^l(t) = \delta^l$$
 Through the modification of the threshold function $\gamma$ we can regulate the 
 sparsity of the network. Bigger threshold values will lead to less neurons being activated,
 while smaller threshold values will lead to more neurons being activated.
-\vspace*{0.5em}
 
 In this section, we examine two strategies for setting the threshold $\gamma$: using 
 a fixed threshold value for all neurons, and employing a Winner-Takes-All (WTA) 
@@ -1383,7 +1369,6 @@ is not necessarily on achieving the best performance, but rather gain a better
 understanding of the trade-off between compression of the network through sparsity and 
 the predictive capability of the network. For this reason we will be solely working on 
 a single dataset, MNIST.
-\vspace*{0.5em}
 
 %Model Architecture
 We will be using the same MLCM architecture as in the previous experiment, constructing 
@@ -1454,7 +1439,6 @@ theoretical neuroscience the WTA mechanism is widely used for modelling purposes
 \cite{Marx2015, Carandini2011}. For this reason, we chose to experiment with WTA 
 sparsity as a biologically motivated approach to enforcing activity constraints 
 in our networks.
-\vspace*{0.5em}
 
 We employ the same experimental setup as in the previous tests: testing on MNIST, maintaining 
 the same architecture and hyperparameters, training for $25$ epochs and repeating each 
@@ -1492,7 +1476,6 @@ significantly degrading the performance, at least in the case of non-sparse inpu
 In particular, the WTA approach seems to be more effective when close to the baseline 
 sparsity of $50\%$, however it also decays more quickly than the fixed threshold as 
 the sparsity is increased.
-\vspace*{0.5em}
 
 An interesting phenomenon that can be seen in Fig. \ref{fig:mnist_accs_exp2_2} is that
 after the $15$-th epoch both the training and validation accuracies of the best 
@@ -1517,11 +1500,10 @@ internal representations through local, layer-wise interactions. Detailed empiri
 tests of MLCM's capabilities were performed, demonstrating the practical advantages 
 that MLCMs can learn meaningful representations and achieve competitive performance 
 on standard benchmarks.
-\vspace*{0.5em}
 
 Despite these promising results, several limitations remain. The recent nature of 
 the MLCM architecture means there is still no rigorous theoretical framework, and 
-its strengths and weaknesses are not fully understood. For instance, the observed difference in performance between models 
+its strengths and weaknesses are not fully known. For instance, the observed difference in performance between models 
 using \(\{0,1\}\) and \(\{-1,1\}\) binary states is not yet well understood and 
 warrants further investigation. Future research should focus on developing a deeper 
 theoretical understanding of MLCMs, exploring more complex variants 

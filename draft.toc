@@ -19,18 +19,18 @@
 \contentsline {chapter}{\numberline {5}Introduction and Motivation}{29}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Background}{29}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Overview of Multi-Layer Chain Architecture}{31}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Mathematical Formulation}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Model Framework}{33}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Learning Dynamics}{34}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Convergence Step}{35}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Update Step}{36}{subsection.6.2.2}%
-\contentsline {chapter}{\numberline {7}Empirical Evaluation}{37}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Baseline Implementation with Classical datasets}{38}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{38}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Results}{39}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Sparsity Enforcement in MLCMs}{41}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Fixed Threshold Sparsity}{43}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Winner-Takes-All Sparsity}{45}{subsection.7.2.2}%
-\contentsline {part}{Conclusions and Future Directions}{48}{chapter*.39}%
-\contentsline {chapter}{References}{48}{section*.40}%
-\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{53}{appendix.A}%
+\contentsline {chapter}{\numberline {6}Mathematical Formulation}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Model Framework}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Learning Dynamics}{33}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Convergence Step}{34}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Update Step}{35}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}Empirical Evaluation}{36}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Baseline Implementation with Classical datasets}{37}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Experimental Setup}{37}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Results}{38}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Sparsity Enforcement in MLCMs}{40}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Fixed Threshold Sparsity}{42}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Winner-Takes-All Sparsity}{43}{subsection.7.2.2}%
+\contentsline {part}{Conclusions and Future Directions}{46}{chapter*.39}%
+\contentsline {chapter}{References}{46}{section*.40}%
+\contentsline {chapter}{\numberline {A}MLCM Training Algorithm}{51}{appendix.A}%
