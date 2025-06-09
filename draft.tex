@@ -115,7 +115,7 @@ meaningful, and I am deeply grateful to have shared this experience with them.\\
 
 Many of the foundational innovations in machine learning have their roots in attempts to model aspects 
 of the brain. Early artificial neural networks were explicitly inspired by biological neural 
-circuitry: McCulloch and Pitts' formalization of a "neuron” in 1943 and Rosenblatt's perceptron in 
+circuitry: McCulloch and Pitts' formalization of a ``neuron'' in 1943 and Rosenblatt's perceptron in 
 1958 directly borrowed the idea of interconnected neurons and synapses. \\
 Subsequent developments, such as convolutional architectures and Hopfield networks, each drew on 
 biological analogues to improve learning and memory. While the field of machine learning has already 
@@ -253,8 +253,8 @@ Due to the \emph{Perceptron Convergence Theorem} we can prove that this rule con
 in finite steps for linearly separable data.
 
 \subsection*{Hebbian Rule}
-This rule is based on the principle of Hebbian learning, which states that "cells that fire together, 
-wire together.”
+This rule is based on the principle of Hebbian learning, which states that ``cells that fire together, 
+wire together.''
 It captures the correlation between presynaptic and postsynaptic activity:
 \[
   \Delta w_i = \eta\,x_i\,y
@@ -769,7 +769,7 @@ plane \((d,a)\) plane, whose extents depend markedly on network size \(N\):
   \item \emph{Intermediate convergence regime (green/blue):}  
     Sandwiched between the two extremes lies a band of parameter 
     combinations for which convergence occurs after a nontrivial 
-    number of updates. This "sweet spot" represents the most 
+    number of updates. This ``sweet spot'' represents the most 
     interesting operational regime, where the sparse positive backbone 
     and the random substrate jointly give rise to genuine attractor 
     dynamics.
@@ -778,7 +778,7 @@ plane \((d,a)\) plane, whose extents depend markedly on network size \(N\):
 
 The width of the intermediate (green/blue) band shrinks with 
 increasing \(N\). Thus, although sparse positive reinforcement can 
-reliably induce convergence, the "parameter margin" for nontrivial 
+reliably induce convergence, the ``parameter margin'' for nontrivial 
 dynamics becomes more stringent in very large systems.
 \vspace*{0.5em}
 
@@ -805,10 +805,10 @@ as \(N\to\infty\).
 \chapter{Reservoir Computing}
 Reservoir Computing (RC) is a computational framework particularly well-suited for 
 processing temporal and sequential data. The fundamental idea behind RC is the use of a 
-fixed, randomly connected recurrent neural network, known as the "reservoir", to 
+fixed, randomly connected recurrent neural network, known as the ``reservoir'', to 
 project input data into a high-dimensional space. \\
 Unlike traditional RNNs, the weights within the reservoir are not trained. Instead, 
-only the weights of a simple linear "readout" layer connected to the reservoir's states 
+only the weights of a simple linear ``readout'' layer connected to the reservoir's states 
 are trained to perform the specific task.\\
 The reservoir's complex, non-linear dynamics, driven by sequential input, create rich 
 spatio-temporal patterns that capture the input's history and context. While not adapted 
@@ -961,7 +961,7 @@ In section \ref{sec: sc_stabilization} we have seen that some methods that can b
 dynamics of a random RNN. In particular, those methods relied on the presence of a self-coupling term
 $J_D$ which acted as an inertial force that prevented each neuron from changing its state too 
 frequently. \\
-Borrowing a term from statistical physics, we call a "ferromagnetic" interaction a positive 
+Borrowing a term from statistical physics, we call a ``ferromagnetic'' interaction a positive 
 interaction between neurons which encourages them to have the same sign of activity. 
 In this case, the self-coupling can be seen as a ferromagnetic connection in time between a neuron at 
 time $t$ and itself at time $t-1$. \\
@@ -1171,13 +1171,14 @@ Given that MLCMs are a novel approach whose behavior is not yet fully
 characterized, our primary goal is not to achieve state-of-the-art performance, 
 but rather to conduct a series of exploratory experiments that test the basic 
 feasibility and potential of the architecture. \\
-\textcolor{red}{To this end, we outline two main experimental protocols. The first 
-assesses baseline MLCM performance on two key datasets, MNIST and Fashion MNIST, as 
-well as two more challenging variants. It also compares these results to simple 
-perceptron classifiers trained on the same data, highlighting any practical 
-advantages or drawbacks. The second experiment investigates a modification to the 
-original MLCM design, switching the use of binary \(\{0,1\}\) states, to enforce neural 
-sparsity, and assesses their impact on empirical behavior. \\}
+To this end, we outline two main experimental protocols. The first 
+evaluates baseline MLCM performance on two key datasets, MNIST and Fashion MNIST, 
+along with two more challenging variants. Results are compared to those from simple 
+perceptron classifiers trained on the same data, highlighting any practical advantages 
+or limitations. The second experiment explores a modification of the MLCM architecture 
+that enforces neural sparsity by switching to binary \(\{0,1\}\) states, using a 
+fixed threshold and a Winner-Takes-All mechanism. This setup assesses how sparsity 
+and competitive activation affect the model's empirical performance. \\
 We will be focusing specifically on classification tasks with binary inputs, as they 
 lend themselves best to the current MLCM formulation. However, this constraint can 
 easily be relaxed in future work by making minor modifications to the architecture. \\
@@ -1189,17 +1190,24 @@ for future research and architectural refinement.
 
 \subsection{Experimental Setup}
 In this first experiment, we evaluate the basic empirical feasibility of MLCMs on 
-the multiple basic datasets: Binary MIST (both original and projected down) and 
-Fashion MNIST and entangled Fashion MNIST (both original and projected down). 
+the multiple basic datasets: Binary MNIST (either projected up or projected down) and 
+Binary Fashion MNIST (either projected up and projected down). 
 MNIST is a widely used dataset consisting of $28 \times 28$ grayscale images of 
 handwritten digits ($0$-$9$), with $60,\!000$ samples for training and $10,\!000$ 
 for testing. The task is to correctly classify each image into 
 one of $10$ classes. Fashion MNIST is a similar dataset composed of $28 \times 28$ 
-grayscale images of clothing items, also with $10$ classes. When we refer to 
-projected down MNIST and fashion MNIST, we mean that the images are passed through 
-a fixed linear projection that scales them down to a smaller dimension\footnote{
-\setstretch{1}As long as the projection $W$ is fixed for each input it doesn't matter too much what 
-its values actually are}, 100 in our 
+grayscale images of clothing items, also with $10$ classes. \\
+When talking about projected up MNIST or Fashion MNIST we mean that we pass them 
+through a fixed linear transformation that scales them up to a larger 
+dimension\footnote{\label{footnote:projection}\setstretch{1}As long as the projection 
+$W$ is fixed for each input it doesn't matter too much what its values actually are}, 
+usually the dimension of the layer $N$. Since we are projecting into a higher dimension, 
+we are not actually losing any information in the data but rather just rescaling the data
+to fit our model better. We thus refer to this case simply as MNIST or Fashion MNIST in any 
+future references. \\
+When we refer to projected down MNIST and fashion MNIST, we mean 
+that the images are passed through a fixed linear projection that scales them down to a smaller 
+dimension\footnote{See Footnote \ref{footnote:projection}}, 100 in our 
 case. This lossy transformation makes the dataset more complicated to learn and 
 acts as a more challenging test for the model. 
 We employ a binarized version of the datasets, where each pixel is either black 
@@ -1212,9 +1220,9 @@ input and the RNN size, we pad the inputs with zeroes so as to get the
 the input dimension $d$ up to $N$. \\
 To favour the forward flow of information over the backward one, we set the left 
 ferromagnetic strength to be higher than the right one. The main 
-hyperparameters are: $\lambda^1_L, \lambda^2_L, \lambda^3_L, \lambda^4_L, 
-\lambda^5_L = 6.0, 4.0, 4.0, 4.0, 4.0$ and $\lambda^1_R, \lambda^2_R, \lambda^3_R, 
-\lambda^4_R, \lambda^5_R = 2.0, 2.0, 2.0, 2.0, 1.5$, then $J_D^l = 0.1 \hspace{5pt} 
+hyperparameters are: $\lambda^2_L, \lambda^3_L, \lambda^4_L, 
+\lambda^5_L = 4.0, 4.0, 4.0, 4.0$ and $\lambda^1_R, \lambda^2_R, \lambda^3_R, 
+\lambda^4_R = 2.0, 2.0, 2.0, 2.0$, then $J_D^l = 0.1 \hspace{5pt} 
 \forall l$, $\lambda_{\mathrm{IN}} = 6.0$ and $\lambda_{\mathrm{OUT}} = 12.0$.
 %
 \subsubsection*{Evaluation}
@@ -1288,9 +1296,9 @@ take values in $z_i \in \{0, 1\}$, where $0$ represents a silent neuron and $1$ 
 We can express the $\{-1, 1\}$ states as the $\{0, 1\}$ states through: 
 $s_i^l(t) = 2 \, z_i^l(t) - 1$. Then equation \ref{eq:si_update} can be rewritten as:
 \begin{align*}
-    z_i^l(t) &= \frac{1}{2} \left( \, \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l 
+    z_i^l(t+1) &= \frac{1}{2} \left( \, \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l 
     (2 \, z_j^l(t) - 1) + J_D\, (2 \, z_i^l(t) - 1) + \lambda_{\mathrm{L}}^l\, (2 \, 
-    z_i^{l-1}(t) - 1) + \lambda_{\mathrm{R}}^l\, ((2 \, z_i^{l+1}(t) - 1))\right) + 1 \right)\\
+    z_i^{l-1}(t) - 1) + \lambda_{\mathrm{R}}^l\, (2 \, z_i^{l+1}(t) - 1)\right) + 1 \right)\\
     &= \boldsymbol{\theta}\left(2 \, \left( \sum_{j \neq i} J_{ij}^l 
     z_j^l(t) + J_D\, z_i^l(t) + \lambda_{\mathrm{L}}^l \, z_i^{l-1}(t) + \lambda_{\mathrm{R}}^l \, 
     z_i^{l+1}(t) \right) - \left( \sum_{j \neq i} J_{ij}^l + J_D + \lambda_{\mathrm{L}}^l
@@ -1313,7 +1321,7 @@ $$ \kappa_i^1 = \frac{1}{2}\left(\sum_{j \neq i} J_{ij}^l + J_D +
 \lambda_{\mathrm{IN}}^l + \lambda_{\mathrm{R}}^l\right), \hspace{20pt} 
 \kappa_i^L = \frac{1}{2}\left(\sum_{j \neq i} J_{ij}^l + J_D + 
 \lambda_{\mathrm{L}}^l\right)$$
-The output $\mathbf{y}$ is not not transformed from $\{-1, 1\}$ to $\{0, 1\}$, while 
+The output $\mathbf{y}$ is not transformed from $\{-1, 1\}$ to $\{0, 1\}$, while 
 the input $\mathbf{x}$ is, thus $\kappa_i^L$ does not include a 
 $\lambda_{\mathrm{OUT}}\sum_{k=1}^{M} W_{ik}^{\mathrm{back}}$ that would at first glance
 be expected.
@@ -1457,10 +1465,70 @@ instead revert back to a fixed threshold of $\gamma = 0$ to ensure that there is
 loss of information. Thus the first layer and last layers will have no sparsity 
 enforcement while the middle layers will all be constrained to a sparsity of $\delta$.
 \subsubsection*{Results}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{pictures/mnist_exp2_2.png}
+        \caption{}\label{fig:mnist_exp2_2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{1\textwidth}
+        \includegraphics[width=\linewidth]{pictures/mnist_accs_exp2_2.png}
+        \caption{}\label{fig:mnist_accs_exp2_2}
+    \end{subfigure}
+    \caption{Fig. \ref{fig:mnist_exp2_1} displays the sparsity of each layer in the 
+    final epoch of training and the final training and validation accuracy for each 
+    value of $\delta$, reported with a $95\%$ confidence interval.
+    Fig. \ref{fig:mnist_accs_exp2_1} shows the training and validation accuracy per epoch
+    for each value of $\delta$, reported with a $95\%$ confidence interval.}
+    \label{fig:exp2_2}
+\end{figure}
+We report the results of the experiment in Fig. \ref{fig:exp2_2}. The trade-off between 
+sparsity and performance observed in the previous experiment persists here, with the 
+performance dropping to near random levels as the $\delta$ reaches $0.4$ sparsity.\\
+Together with the results from the previous experiment, these findings suggest that 
+there is not much room for compression of the network through sparsity without 
+significantly degrading the performance, at least in the case of non-sparse inputs.\\
+In particular, the WTA approach seems to be more effective when close to the baseline 
+sparsity of $50\%$, however it also decays more quickly than the fixed threshold as 
+the sparsity is increased.
+\vspace*{0.5em}
 
-\chapter{Conclusions and Future Directions}
-\section{Summary of Contributions}
-\section{Limitations and Open Questions}
+An interesting phenomenon that can be seen in Fig. \ref{fig:mnist_accs_exp2_2} is that
+after the $15$-th epoch both the training and validation accuracies of the best 
+performing models start decreasing. Upon further inspection, this  ``unlearning'' phase 
+coincides with an increase in the average iteration taken for the model to converge. \\
+Further experiments with an increase in the batch size have helped mitigate this effect, 
+though at the cost of a much longer training time, however further research is needed 
+to properly understand the cause of this effect. 
+
+\chapter*{Conclusions and Future Directions}
+\addcontentsline{toc}{part}{Conclusions and Future Directions}
+In this thesis, we explored a small subset of large interplay between biological and 
+machine learning, with a particular focus on neural architectures and learning rules 
+that reflect principles observed in the brain. Part I provided an overview of 
+foundational models, including the perceptron, Hopfield networks, and random recurrent 
+neural networks, emphasizing both their computational properties and biological 
+relevance. \\
+Part II introduced the Multi-Layer Chain Model (MLCM), a novel architecture inspired 
+by biological mechanisms such as local learning and sparse activity. We presented the 
+mathematical formulation of MLCMs and discussed their potential to generate meaningful 
+internal representations through local, layer-wise interactions. Detailed empirical  
+tests of MLCM's capabilities were performed, demonstrating the practical advantages 
+that MLCMs can learn meaningful representations and achieve competitive performance 
+on standard benchmarks.
+\vspace*{0.5em}
+
+Despite these promising results, several limitations remain. The recent nature of 
+the MLCM architecture means there is still no rigorous theoretical framework, and 
+its strengths and weaknesses are not fully understood. For instance, the observed difference in performance between models 
+using \(\{0,1\}\) and \(\{-1,1\}\) binary states is not yet well understood and 
+warrants further investigation. Future research should focus on developing a deeper 
+theoretical understanding of MLCMs, exploring more complex variants 
+(such as with convolutional layers), and further investigating the role of sparsity in 
+learning and generalization to further close the gap between biological plausibility 
+and state-of-the-art machine learning.
+
 
 %--------------------
 %% References and Appendices
@@ -1493,9 +1561,9 @@ Weight Decay $\lambda$, Robustness $\rho$, Initialization Method $init\_method$
 \Statex
 \Statex \textit{// Initialization Step}
 \State $\mathbf{y}_{batch} \gets \mathbf{y} \cdot \mathbf{W}^{back}$
-\If{$init\_method = \text{"input"}$}
+\If{$init\_method = \text{``input''}$}
     \State Initialize states $\mathbf{S}$ by repeating $\mathbf{x}_{batch}$ for $L+2$ layers
-\ElsIf{$init\_method = \text{"zeros"}$}
+\ElsIf{$init\_method = \text{``zeros''}$}
     \State Initialize states $\mathbf{S}$ as zeros
 \EndIf
 \State $\mathbf{S}^0 \gets \mathbf{x}_{batch}$ \Comment{Set input as 0-th layer}
