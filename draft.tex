@@ -1286,7 +1286,7 @@ take values in $z_i \in \{0, 1\}$, where $0$ represents a silent neuron and $1$ 
 We can express the $\{-1, 1\}$ states as the $\{0, 1\}$ states through: 
 $s_i^l(t) = 2 \, z_i^l(t) - 1$. Then equation \ref{eq:si_update} can be rewritten as:
 \begin{align*}
-    z_i^l(t+1) &= \frac{1}{2} \left( \, \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l 
+    \hspace{-20pt}z_i^l(t+1) &= \frac{1}{2} \left( \, \operatorname{sign}\left(\displaystyle\sum_{j \neq i} J_{ij}^l 
     (2 \, z_j^l(t) - 1) + J_D\, (2 \, z_i^l(t) - 1) + \lambda_{\mathrm{L}}^l\, (2 \, 
     z_i^{l-1}(t) - 1) + \lambda_{\mathrm{R}}^l\, (2 \, z_i^{l+1}(t) - 1)\right) + 1 \right)\\
     &= \boldsymbol{\theta}\left(2 \, \left( \sum_{j \neq i} J_{ij}^l 
